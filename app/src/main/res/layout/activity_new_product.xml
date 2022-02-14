@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@color/white"
+            android:src="@drawable/baseline_keyboard_backspace_black_36"
+            android:tint="@color/gray_800"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/admin_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="New Product"
+            android:textSize="@dimen/admin_page_title_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:layout_marginTop="@dimen/table_top_margin_size"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="상품명"
+                    android:textSize="@dimen/item_text_size" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/product_title_item"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:text="Item title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/item_text_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="@dimen/table_top_margin_size"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="PRICE"
+                    android:textSize="@dimen/item_text_size" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/product_price_item"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:text="KRW $price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/item_text_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="@dimen/table_top_margin_size"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="COLOR"
+                    android:textSize="@dimen/item_text_size" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/product_colors_item"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:text="colors"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/item_text_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="@dimen/table_top_margin_size"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="SIZE"
+                    android:textSize="@dimen/item_text_size" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="10dp">
+                        <CheckedTextView
+                            android:id="@+id/checkbox_85_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:checked="false"
+                            android:text="85"
+                            android:textSize="@dimen/item_text_size"
+                            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                            android:layout_marginLeft="11dp"
+                            />
+                        <CheckedTextView
+                            android:id="@+id/checkbox_90_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:checked="false"
+                            android:text="90"
+                            android:textSize="@dimen/item_text_size"
+                            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                            android:layout_marginLeft="12dp"
+                            />
+                        <CheckedTextView
+                            android:id="@+id/checkbox_95_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:checked="false"
+                            android:text="95"
+                            android:textSize="@dimen/item_text_size"
+                            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                            android:layout_marginLeft="5dp"
+                            />
+                        <CheckedTextView
+                            android:id="@+id/checkbox_100_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:checked="false"
+                            android:text="100"
+                            android:textSize="@dimen/item_text_size"
+                            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                            android:layout_marginLeft="5dp"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="10dp">
+                        <CheckedTextView
+                            android:id="@+id/checkbox_105_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:checked="false"
+                            android:text="105"
+                            android:textSize="@dimen/item_text_size"
+                            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                            android:layout_marginLeft="5dp"
+                            />
+                        <CheckedTextView
+                            android:id="@+id/checkbox_110_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:checked="false"
+                            android:text="110"
+                            android:textSize="@dimen/item_text_size"
+                            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                            android:layout_marginLeft="5dp"
+                            />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:minWidth="90dp"
+                                android:hint="직접추가"
+                                android:textSize="@dimen/item_text_size"
+                                android:inputType="textEmailAddress"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                />
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:text="add"
+                                android:textSize="@dimen/item_text_small_size"
+                                android:background="@color/gray_800"
+                                android:textColor="@color/white"
+                                android:layout_weight="0"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/size_lis_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="null"
+                        android:visibility="gone"
+                        />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/table_top_margin_size"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Image"
+                    android:textSize="@dimen/item_text_size" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/image_url_item"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="start"
+                    android:paddingLeft="10dp"
+                    android:text="url"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/item_text_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="@dimen/table_top_margin_size"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="details"
+                    android:textSize="@dimen/item_text_size" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/product_details_item"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:text="상세 설명"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/item_text_size" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/admin_margin_size"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@color/gray_800"
+                android:text="추가"
+                android:textColor="@color/white"
+                android:textSize="@dimen/item_text_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@color/gray_200"
+                android:text="취소"
+                android:textSize="@dimen/item_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
