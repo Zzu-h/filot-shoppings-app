@@ -6,6 +6,8 @@ import com.zzuh.filot_shoppings.data.vo.ProductList
 
 class ProductListRepository {
     var dataSource: ProductListNetworkDataSource = ProductListNetworkDataSource()
+    init {
+    }
     fun fetchProductList(name: String): LiveData<ProductList>{
         dataSource.fetchProductList(name)
         return dataSource.downloadProductListResponse

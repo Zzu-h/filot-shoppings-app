@@ -35,9 +35,9 @@ class ProductDetailActivity : AppCompatActivity() {
             CoroutineScope(Dispatchers.Main).launch {
                 binding.itemTitle.text = it.name
                 binding.productPriceItem.text = "KRW ${it.price}"
-                binding.deliveryPriceItem.text = "KRW ${it.deliveryPrice}"
+                //binding.deliveryPriceItem.text = "KRW ${it.deliveryPrice}"
                 Glide.with(this@ProductDetailActivity)
-                    .load(it.imagePath)
+                    .load(it.imageUrl)
                     .into(binding.productImg)
             }
         })

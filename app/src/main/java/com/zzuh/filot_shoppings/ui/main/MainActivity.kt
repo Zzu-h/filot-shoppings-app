@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = MainViewModel()
 
         categoryFragment = CategoryFragment(categoryViewModel)
-        mainFragment = MainFragment(mainViewModel)
+        mainFragment = MainFragment(categoryViewModel)
         cartFragment = CartFragment()
 
         Glide.with(this)
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 if(tab != null){
                     transaction = fragmentManager.beginTransaction()
-                    categoryViewModel.setData(tab.text as String)
+                    categoryViewModel.setCategoryName(tab.text as String)
                     transaction.replace(R.id.fragment_content, categoryFragment)
                     if(mainViewModel.isMain!!) mainViewModel.isMain = false
                     //transaction.addToBackStack(tab.text as String)

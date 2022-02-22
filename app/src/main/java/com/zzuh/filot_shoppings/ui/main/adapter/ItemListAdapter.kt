@@ -22,7 +22,7 @@ class ItemListAdapter(private var itemList: List<Product>, val context: Context)
         binding.nameItem.text = item.name
         binding.priceItem.text =  item.price.toString()
 
-        val moviePosterURL: String = IMAGE_BASE_URL + item.imagePath
+        val moviePosterURL: String = IMAGE_BASE_URL + item.imageUrl
 
         Glide.with(context)
             .load(moviePosterURL)

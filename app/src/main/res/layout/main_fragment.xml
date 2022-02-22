@@ -37,6 +37,14 @@
             android:gravity="center"
             android:text="Connection Problem!!"
             android:visibility="gone"/>
+        <TextView
+            android:id="@+id/no_data_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="상품이 없습니다!"
+            android:textSize="20dp"
+            android:visibility="gone"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/product_list_recycler_view"
             android:layout_width="match_parent"

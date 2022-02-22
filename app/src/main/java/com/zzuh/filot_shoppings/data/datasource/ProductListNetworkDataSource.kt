@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.zzuh.filot_shoppings.data.api.BASE_URL
 import com.zzuh.filot_shoppings.data.api.ProductInterface
 import com.zzuh.filot_shoppings.data.repository.NetworkState
+import com.zzuh.filot_shoppings.data.vo.Product
 import com.zzuh.filot_shoppings.data.vo.ProductList
 import retrofit2.Call
 import retrofit2.Callback
@@ -33,14 +34,19 @@ class ProductListNetworkDataSource {
         val callGetList = api.getProductList(name)
         _networkState.postValue(NetworkState.LOADING)
 
-        callGetList.enqueue(object :Callback<ProductList>{
-            override fun onFailure(call: Call<ProductList>, t: Throwable) {
-                Log.d("fetchProductList", t.printStackTrace().toString())
+        callGetList.enqueue(object :Callback<List<Product>>{
+            override fun onFailure(call: Call<List<Product>>, t: Throwable) {
+                Log.d("fetchProductList-error", t.printStackTrace().toString())
+                t.printStackTrace()
                 _networkState.postValue(NetworkState.ERROR)
             }
 
-            override fun onResponse(call: Call<ProductList>, response: Response<ProductList>) {
-                _downloadProductListResponse.postValue(response.body() as ProductList)
+            override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
+                if(response.isSuccessful)
+                    Log.d("tester","${response.code()}")
+                var item = ProductList(listOf<Product>())
+                item.products = (response.body() as List<Product>)
+                _downloadProductListResponse.postValue(item)
                 _networkState.postValue(NetworkState.LOADED)
             }
         })

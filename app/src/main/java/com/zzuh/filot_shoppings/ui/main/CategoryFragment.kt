@@ -19,7 +19,7 @@ class CategoryFragment(private val categoryViewModel: CategoryViewModel) : Fragm
         binding = FragmentCategoryBinding.inflate(layoutInflater)
         viewModel = categoryViewModel
 
-        viewModel.tempData.observe(this, Observer {
+        viewModel.categoryName.observe(this, Observer {
             binding.categoryTitleTextView.text = it
         })
     }

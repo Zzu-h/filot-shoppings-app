@@ -1,5 +1,6 @@
 package com.zzuh.filot_shoppings.data.api
 
+import com.zzuh.filot_shoppings.data.vo.Product
 import com.zzuh.filot_shoppings.data.vo.ProductDetails
 import com.zzuh.filot_shoppings.data.vo.ProductList
 import retrofit2.Call
@@ -15,10 +16,10 @@ const val LAN_CODE = "ko-KR"
 const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
 
 interface ProductInterface {
-    @GET("/categories")
+    @GET("/product-list/{name}")
     fun getProductList(
-        @Query("name") name: String
-    ): Call<ProductList>
+        @Path("name") name: String
+    ): Call<List<Product>>
 
     @GET("/products/{id}")
     fun getProductDetails(

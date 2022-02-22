@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/drawable/dark_color_button.xml" value="0.3640625" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/drawable/layout_bottom_shadow.xml" value="0.3640625" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/drawable/popup_background.xml" value="0.3640625" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/drawable/table_cell_side_border.xml" value="0.27708333333333335" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/drawable/table_row_bottom_border.xml" value="0.27708333333333335" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_admin.xml" value="0.25" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_category_manage.xml" value="0.2625" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_find_user.xml" value="0.25" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_join.xml" value="0.25" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_launch.xml" value="0.34791666666666665" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_main.xml" value="0.2078125" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_new_product.xml" value="0.2" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_product_detail.xml" value="0.2609375" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_product_manage.xml" value="0.33" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/activity_user_manage.xml" value="0.25" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/drawer_layout.xml" value="0.20901639344262296" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/footer.xml" value="0.34791666666666665" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/fragment_add_info.xml" value="0.2" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/fragment_basic_info.xml" value="0.33" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/fragment_cart.xml" value="0.34791666666666665" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/fragment_category.xml" value="0.19010416666666666" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/main_fragment.xml" value="0.1853932584269663" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/manage_main_category_list_item.xml" value="0.34791666666666665" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/manage_sub_category_list_item.xml" value="0.34791666666666665" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/product_list_item.xml" value="0.22" />
+        <entry key="..\:/PersonalTraining/kotlin-study/filot_shoppings/app/src/main/res/layout/user_manage_popup.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3770833333333333" />
+        <entry key="app/src/main/res/drawable/dark_color_button.xml" value="0.27291666666666664" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3770833333333333" />
+        <entry key="app/src/main/res/layout/activity_launch.xml" value="0.346875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/activity_product_detail.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/cart_list_item.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/drawer_layout.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/footer.xml" value="0.380803240976377" />
+        <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/fragment_category.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/product_list_item.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/selected_list_item.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/temp_layout.xml" value="0.19947916666666668" />
+        <entry key="app/src/main/res/menu/header.xml" value="0.3553846153846154" />
+        <entry key="app/src/main/res/menu/menu_header.xml" value="0.3609375" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3770833333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3770833333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
