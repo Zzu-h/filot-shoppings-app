@@ -1,7 +1,5 @@
 package com.zzuh.filot_shoppings.ui.main
 
-import android.content.Context
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,14 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import com.zzuh.filot_shoppings.data.vo.Product
 import com.zzuh.filot_shoppings.databinding.MainFragmentBinding
-import com.zzuh.filot_shoppings.ui.main.viewmodel.CategoryViewModel
-import com.zzuh.filot_shoppings.ui.main.viewmodel.MainViewModel
+import com.zzuh.filot_shoppings.ui.main.viewmodel.ProductListViewModel
 
-class MainFragment(private var viewModel: CategoryViewModel) : Fragment() {
+class MainFragment(private var viewModel: ProductListViewModel) : Fragment() {
         lateinit var binding: MainFragmentBinding
-    lateinit var adapter: ItemListAdapter
+    lateinit var adapter: ProductListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +23,7 @@ class MainFragment(private var viewModel: CategoryViewModel) : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = MainFragmentBinding.inflate(layoutInflater)
-        adapter = ItemListAdapter(emptyList(), requireContext())
+        adapter = ProductListAdapter(emptyList(), requireContext())
 
         var gridLayout = GridLayoutManager(context, 2)
         binding.productListRecyclerView.layoutManager = gridLayout

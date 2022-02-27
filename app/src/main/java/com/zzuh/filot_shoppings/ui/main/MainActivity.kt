@@ -18,16 +18,17 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.tabs.TabLayout
 import com.zzuh.filot_shoppings.R
 import com.zzuh.filot_shoppings.databinding.ActivityMainBinding
-import com.zzuh.filot_shoppings.ui.main.viewmodel.CategoryViewModel
 import android.widget.LinearLayout
 
 import android.graphics.drawable.GradientDrawable
 import android.view.View
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.zzuh.filot_shoppings.data.vo.Category
 import com.zzuh.filot_shoppings.ui.login.LoginActivity
-import com.zzuh.filot_shoppings.ui.main.viewmodel.MainViewModel
+import com.zzuh.filot_shoppings.ui.main.viewmodel.*
 
 const val BANNER_IMG_URL = "https://file.cafe24cos.com/banner-admin-live/upload/joker8992/ede80c3b-076d-40e9-83c6-fb4c1f12c00b.jpeg"
 
@@ -35,15 +36,14 @@ class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var binding: ActivityMainBinding
 
-    var list = listOf("test1", "test2", "test3")
+    var mainCategoryList = emptyList<Category>()
     var tabList = mutableListOf<TabLayout.Tab>()
 
     lateinit var mainFragment: MainFragment
-    lateinit var mainViewModel: MainViewModel
-
     lateinit var cartFragment: CartFragment
-
     lateinit var categoryFragment: CategoryFragment
+
+    lateinit var productListViewModel: ProductListViewModel
     lateinit var categoryViewModel: CategoryViewModel
 
     lateinit var transaction: FragmentTransaction
@@ -55,11 +55,13 @@ class MainActivity : AppCompatActivity() {
         fragmentManager = supportFragmentManager
         transaction = fragmentManager.beginTransaction()
 
-        categoryViewModel = CategoryViewModel()
-        mainViewModel = MainViewModel()
+        productListViewModel = ViewModelProvider(this, ProductListViewModelFactory(this))
+            .get(ProductListViewModel::class.java)
+        categoryViewModel = ViewModelProvider(this, CategoryViewModelFactory(this))
+            .get(CategoryViewModel::class.java)
 
-        categoryFragment = CategoryFragment(categoryViewModel)
-        mainFragment = MainFragment(categoryViewModel)
+        categoryFragment = CategoryFragment(productListViewModel)
+        mainFragment = MainFragment(productListViewModel)
         cartFragment = CartFragment()
 
         Glide.with(this)
@@ -69,7 +71,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initToolBarSetting()
-        initFragmentSetting()
         initViewModelSetting()
 
         binding.drawerLayout.needLoginTv.setOnClickListener {
@@ -101,9 +102,9 @@ class MainActivity : AppCompatActivity() {
         이유: 프래그먼트 클래스 하나 당 하나의 프래그먼트만 생성할 수 있음
         */
 
-        for(item in list){
+        for(item in mainCategoryList){
             tabList.add(binding.mainTabLayout.newTab())
-            tabList.last().text = item
+            tabList.last().text = item.name
             binding.mainTabLayout.addTab(tabList.last())
         }
         val root: View = binding.mainTabLayout.getChildAt(0)
@@ -122,9 +123,9 @@ class MainActivity : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 if(tab != null){
                     transaction = fragmentManager.beginTransaction()
-                    categoryViewModel.setCategoryName(tab.text as String)
+                    productListViewModel.setCategoryName(tab.text as String)
                     transaction.replace(R.id.fragment_content, categoryFragment)
-                    if(mainViewModel.isMain!!) mainViewModel.isMain = false
+                    if(categoryViewModel.isMain!!) categoryViewModel.isMain = false
                     //transaction.addToBackStack(tab.text as String)
                     transaction.commit()
                 }
@@ -140,7 +141,13 @@ class MainActivity : AppCompatActivity() {
         })
     }
     private fun initViewModelSetting(){
-        mainViewModel._isMain.observe(this, Observer { binding.bannerImg.visibility = if (mainViewModel.isMain!!) View.VISIBLE else View.GONE })
+        categoryViewModel._isMain.observe(this, Observer { binding.bannerImg.visibility = if (categoryViewModel.isMain!!) View.VISIBLE else View.GONE })
+        categoryViewModel.mainCategoryList.observe(this, Observer {
+            Log.d("tester","get the category")
+            this.mainCategoryList = it
+            initFragmentSetting()
+        })
+        categoryViewModel.getMainCategoryList("main")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -155,7 +162,7 @@ class MainActivity : AppCompatActivity() {
         if(item.itemId == R.id.menu_cart){
             transaction = fragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_content, cartFragment)
-            if(mainViewModel.isMain!!) mainViewModel.isMain = false
+            if(categoryViewModel.isMain!!) categoryViewModel.isMain = false
             transaction.commit()
         }
         return super.onOptionsItemSelected(item)

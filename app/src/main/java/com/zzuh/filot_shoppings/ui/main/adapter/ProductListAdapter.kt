@@ -11,12 +11,12 @@ import com.zzuh.filot_shoppings.databinding.ProductListItemBinding
 
 const val IMAGE_BASE_URL = "naver.com"
 
-class ItemListViewHolder(val binding: ProductListItemBinding): RecyclerView.ViewHolder(binding.root)
+class ProductListViewHolder(val binding: ProductListItemBinding): RecyclerView.ViewHolder(binding.root)
 
-class ItemListAdapter(private var itemList: List<Product>, val context: Context): RecyclerView.Adapter<ItemListViewHolder>() {
+class ProductListAdapter(private var itemList: List<Product>, val context: Context): RecyclerView.Adapter<ProductListViewHolder>() {
     override fun getItemCount(): Int = itemList.size
 
-    override fun onBindViewHolder(holder: ItemListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProductListViewHolder, position: Int) {
         val binding = holder.binding
         val item = this.itemList[position]
         binding.nameItem.text = item.name
@@ -36,8 +36,8 @@ class ItemListAdapter(private var itemList: List<Product>, val context: Context)
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemListViewHolder
-            = ItemListViewHolder(ProductListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListViewHolder
+            = ProductListViewHolder(ProductListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     fun updateData(newData: List<Product>){
         this.itemList = newData
