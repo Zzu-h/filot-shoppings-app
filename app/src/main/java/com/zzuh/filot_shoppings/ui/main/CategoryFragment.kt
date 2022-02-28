@@ -95,7 +95,9 @@ class CategoryFragment(
             }
             NetworkState.LOADED -> {
                 binding.loadingBar.visibility = View.GONE
-                binding.subTabLayout.visibility = View.VISIBLE
+                if(categoryViewModel.subCategoryList.value != null && categoryViewModel.subCategoryList.value!!.isNotEmpty()) {
+                    binding.subTabLayout.visibility = View.VISIBLE
+                }
                 binding.txtError.visibility = View.GONE
                 var item = productListViewModel.productList.value
                 if( item == null || item !!.products.isEmpty()){
