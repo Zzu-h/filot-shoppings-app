@@ -38,6 +38,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/email_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="email"
@@ -54,6 +55,7 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
