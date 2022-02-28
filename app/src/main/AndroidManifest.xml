@@ -12,30 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Filot_shoppings">
         <activity
-            android:name=".ui.admin.NewProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.admin.ProductManageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.admin.CategoryManageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.admin.UserManageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.admin.AdminActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.login.FindUserActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.login.JoinActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.main.ProductDetailActivity"
             android:exported="false" />
         <activity

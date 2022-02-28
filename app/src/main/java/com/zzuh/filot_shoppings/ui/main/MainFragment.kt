@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.databinding.MainFragmentBinding
 import com.zzuh.filot_shoppings.ui.main.viewmodel.ProductListViewModel
 
@@ -40,5 +41,27 @@ class MainFragment(private var viewModel: ProductListViewModel) : Fragment() {
             adapter.notifyDataSetChanged()
         })
         viewModel.getProductList("main")
+        viewModel.networkState.observe(this, Observer {
+            when(it){
+                NetworkState.LOADING -> {
+                    binding.loadingBar.visibility = View.VISIBLE
+                    binding.noDataTv.visibility = View.GONE
+                    binding.productListRecyclerView.visibility = View.GONE
+                    binding.txtError.visibility = View.GONE
+                }
+                NetworkState.LOADED -> {
+                    binding.loadingBar.visibility = View.GONE
+                    binding.noDataTv.visibility = View.GONE
+                    binding.productListRecyclerView.visibility = View.VISIBLE
+                    binding.txtError.visibility = View.GONE
+                }
+                NetworkState.ERROR -> {
+                    binding.loadingBar.visibility = View.GONE
+                    binding.noDataTv.visibility = View.GONE
+                    binding.productListRecyclerView.visibility = View.GONE
+                    binding.txtError.visibility = View.VISIBLE
+                }
+            }
+        })
     }
 }

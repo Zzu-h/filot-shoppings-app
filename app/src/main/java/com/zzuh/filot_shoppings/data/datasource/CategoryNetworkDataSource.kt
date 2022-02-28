@@ -5,11 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.zzuh.filot_shoppings.data.api.BASE_URL
 import com.zzuh.filot_shoppings.data.api.CategoryInterface
-import com.zzuh.filot_shoppings.data.api.ProductInterface
 import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.data.vo.Category
-import com.zzuh.filot_shoppings.data.vo.Product
-import com.zzuh.filot_shoppings.data.vo.ProductList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

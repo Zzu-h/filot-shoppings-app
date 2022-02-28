@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.tabs.TabLayout
 import com.zzuh.filot_shoppings.R
+import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.data.vo.Category
 import com.zzuh.filot_shoppings.databinding.FragmentCategoryBinding
 import com.zzuh.filot_shoppings.ui.main.viewmodel.CategoryViewModel
@@ -43,11 +44,9 @@ class CategoryFragment(
         binding.productListRecyclerView.adapter = adapter
 
         productListViewModel.productList.observe(this, Observer{
-            if(it == null || it.products.isEmpty()){
-                binding.noDataTv.visibility = View.VISIBLE
-                binding.productListRecyclerView.visibility = View.GONE
+            if(it == null || it.products.isEmpty())
                 return@Observer
-            }
+
             adapter.updateData(it.products)
             adapter.notifyDataSetChanged()
         })
@@ -56,7 +55,6 @@ class CategoryFragment(
             productListViewModel.getProductList(it)
             categoryViewModel.getSubCategoryList(it)
         })
-
         categoryViewModel.subCategoryList.observe(this, Observer {
             subCategoryList = it
             binding.subTabLayout.removeAllTabs()
@@ -76,5 +74,46 @@ class CategoryFragment(
                 (root as LinearLayout).dividerDrawable = drawable
             }
         })
+
+        productListViewModel.networkState.observe(this, Observer {
+            if(it == NetworkState.ERROR || it == NetworkState.LOADING) viewControl(it)
+            else if(categoryViewModel.subCategoryNetworkState.value == NetworkState.LOADED) viewControl(it)
+        })
+        categoryViewModel.subCategoryNetworkState.observe(this, Observer {
+            if(it == NetworkState.ERROR || it == NetworkState.LOADING) viewControl(it)
+            else if(productListViewModel.networkState.value == NetworkState.LOADED) viewControl(it)
+        })
+    }
+    private fun viewControl(it: NetworkState){
+        when(it){
+            NetworkState.LOADING -> {
+                binding.loadingBar.visibility = View.VISIBLE
+                binding.subTabLayout.visibility = View.GONE
+                binding.productListRecyclerView.visibility = View.GONE
+                binding.noDataTv.visibility = View.GONE
+                binding.txtError.visibility = View.GONE
+            }
+            NetworkState.LOADED -> {
+                binding.loadingBar.visibility = View.GONE
+                binding.subTabLayout.visibility = View.VISIBLE
+                binding.txtError.visibility = View.GONE
+                var item = productListViewModel.productList.value
+                if( item == null || item !!.products.isEmpty()){
+                    binding.productListRecyclerView.visibility = View.GONE
+                    binding.noDataTv.visibility = View.VISIBLE
+                }
+                else {
+                    binding.productListRecyclerView.visibility = View.VISIBLE
+                    binding.noDataTv.visibility = View.GONE
+                }
+            }
+            NetworkState.ERROR -> {
+                binding.loadingBar.visibility = View.GONE
+                binding.subTabLayout.visibility = View.GONE
+                binding.productListRecyclerView.visibility = View.GONE
+                binding.noDataTv.visibility = View.GONE
+                binding.txtError.visibility = View.VISIBLE
+            }
+        }
     }
 }

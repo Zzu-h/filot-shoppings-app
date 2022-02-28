@@ -1,4 +1,4 @@
-package com.zzuh.filot_shoppings.data.repository;
+package com.zzuh.filot_shoppings_admin.data.repository
 
 enum class Status {
     RUNNING,

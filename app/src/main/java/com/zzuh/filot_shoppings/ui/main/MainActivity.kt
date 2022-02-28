@@ -19,16 +19,15 @@ import com.google.android.material.tabs.TabLayout
 import com.zzuh.filot_shoppings.R
 import com.zzuh.filot_shoppings.databinding.ActivityMainBinding
 import android.widget.LinearLayout
-
 import android.graphics.drawable.GradientDrawable
 import android.view.View
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.data.vo.Category
 import com.zzuh.filot_shoppings.ui.main.viewmodel.*
-import com.zzuh.filot_shoppings_admin.ui.admin.AdminActivity
 import com.zzuh.filot_shoppings_login.ui.login.LoginActivity
 
 const val BANNER_IMG_URL = "https://file.cafe24cos.com/banner-admin-live/upload/joker8992/ede80c3b-076d-40e9-83c6-fb4c1f12c00b.jpeg"
@@ -77,6 +76,12 @@ class MainActivity : AppCompatActivity() {
         binding.drawerLayout.needLoginTv.setOnClickListener {
             var intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+        }
+        binding.headerTitle.setOnClickListener {
+            transaction = fragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_content, mainFragment)
+            if(categoryViewModel.isMain!!) categoryViewModel.isMain = true
+            transaction.commit()
         }
     }
 
@@ -149,6 +154,34 @@ class MainActivity : AppCompatActivity() {
             initFragmentSetting()
         })
         categoryViewModel.getMainCategoryList("main")
+        categoryViewModel.mainCategoryNetworkState.observe(this, Observer {
+            when(it){
+                NetworkState.LOADING -> {
+                    binding.loadingBar.visibility = View.VISIBLE
+                    binding.bannerImg.visibility = View.GONE
+                    binding.drawer.visibility = View.GONE
+                    binding.mainTabLayout.visibility = View.GONE
+                    binding.fragmentContent.visibility = View.GONE
+                    binding.txtError.visibility = View.GONE
+                }
+                NetworkState.LOADED -> {
+                    binding.loadingBar.visibility = View.GONE
+                    binding.bannerImg.visibility = View.VISIBLE
+                    binding.drawer.visibility = View.VISIBLE
+                    binding.mainTabLayout.visibility = View.VISIBLE
+                    binding.fragmentContent.visibility = View.VISIBLE
+                    binding.txtError.visibility = View.GONE
+                }
+                NetworkState.ERROR -> {
+                    binding.loadingBar.visibility = View.GONE
+                    binding.bannerImg.visibility = View.GONE
+                    binding.drawer.visibility = View.GONE
+                    binding.mainTabLayout.visibility = View.GONE
+                    binding.fragmentContent.visibility = View.GONE
+                    binding.txtError.visibility = View.VISIBLE
+                }
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
