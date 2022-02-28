@@ -41,6 +41,7 @@ class ProductDetailActivity : AppCompatActivity() {
                     .into(binding.productImg)
             }
         })
+        binding.backBtn.setOnClickListener { finish() }
         detailsViewModel.selectedList.observe(this, Observer { adapter.updateData(it.list as List<SelectedProductItem>) })
     }
 }

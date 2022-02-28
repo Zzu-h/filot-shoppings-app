@@ -18,6 +18,14 @@
         android:nestedScrollingEnabled="true"
         android:theme="?attr/actionBarTheme"
         app:menu="@menu/menu_header">
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_keyboard_backspace_black_24"
+            android:tint="@color/gray_800"
+            tools:ignore="UseAppTint" />
 
         <TextView
             android:layout_width="wrap_content"
