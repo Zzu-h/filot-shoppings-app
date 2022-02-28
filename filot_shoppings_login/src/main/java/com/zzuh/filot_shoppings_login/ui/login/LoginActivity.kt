@@ -1,11 +1,9 @@
-package com.zzuh.filot_shoppings.ui.login
+package com.zzuh.filot_shoppings_login.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import com.zzuh.filot_shoppings.databinding.ActivityLoginBinding
+import com.zzuh.filot_shoppings_login.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding

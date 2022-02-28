@@ -10,3 +10,4 @@ rootProject.name = "filot_shoppings"
 include ':app'
 include ':app:filotshoppingslogin'
 include ':filot_shoppings_login'
+include ':filot_shoppings_admin'

@@ -27,8 +27,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.zzuh.filot_shoppings.data.vo.Category
-import com.zzuh.filot_shoppings.ui.login.LoginActivity
 import com.zzuh.filot_shoppings.ui.main.viewmodel.*
+import com.zzuh.filot_shoppings_admin.ui.admin.AdminActivity
+import com.zzuh.filot_shoppings_login.ui.login.LoginActivity
 
 const val BANNER_IMG_URL = "https://file.cafe24cos.com/banner-admin-live/upload/joker8992/ede80c3b-076d-40e9-83c6-fb4c1f12c00b.jpeg"
 

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Category"
+        android:textSize="@dimen/admin_text_size"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/admin_margin_size"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sub_category_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="@dimen/admin_margin_size"
+        android:layout_marginRight="@dimen/admin_margin_size"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:weightSum="10"
+        >
+        <LinearLayout
+            android:id="@+id/user_manage"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:orientation="horizontal"
+            android:layout_weight="9"
+            >
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/new_sub_category_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:hint="New Category"
+                android:textSize="@dimen/item_text_size"
+                android:background="@null"
+                android:gravity="center|left"
+                android:textColor="@color/black" />
+
+            <ImageButton
+                android:id="@+id/add_sub_category_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:visibility="visible"
+                android:src="@drawable/outline_add_circle_outline_black_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="8"
+                android:tint="@color/gray_800"
+                tools:ignore="UseAppTint" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/gray_500"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="@color/gray_800"
+        />
+</LinearLayout>

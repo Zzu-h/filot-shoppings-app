@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zzuh.filot_shoppings_admin">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Filot_shoppings">
+        <activity android:name=".ui.admin.CategoryManageActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.admin.NewProductActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.admin.ProductManageActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.admin.UserManageActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.admin.AdminActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

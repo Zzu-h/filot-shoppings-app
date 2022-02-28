@@ -1,17 +1,15 @@
-package com.zzuh.filot_shoppings.ui.login
+package com.zzuh.filot_shoppings_login.ui.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayout
-import com.zzuh.filot_shoppings.R
-import com.zzuh.filot_shoppings.data.repository.JoinRepository
-import com.zzuh.filot_shoppings.databinding.ActivityJoinBinding
-import com.zzuh.filot_shoppings.ui.login.viewmodel.JoinViewModel
+import com.zzuh.filot_shoppings_login.R
+import com.zzuh.filot_shoppings_login.databinding.ActivityJoinBinding
+import com.zzuh.filot_shoppings_login.ui.login.viewmodel.JoinViewModel
 
 class JoinActivity : AppCompatActivity() {
     lateinit var joinViewModel: JoinViewModel

@@ -1,9 +1,9 @@
-package com.zzuh.filot_shoppings.ui.login
+package com.zzuh.filot_shoppings_login.ui.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.zzuh.filot_shoppings.databinding.ActivityFindUserBinding
+import com.zzuh.filot_shoppings_login.databinding.ActivityFindUserBinding
 
 class FindUserActivity : AppCompatActivity() {
     lateinit var binding: ActivityFindUserBinding
