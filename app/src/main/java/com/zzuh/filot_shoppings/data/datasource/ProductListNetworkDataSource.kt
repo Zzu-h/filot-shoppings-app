@@ -43,7 +43,7 @@ class ProductListNetworkDataSource {
 
             override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
                 if(response.isSuccessful)
-                    Log.d("tester","${response.code()}")
+                    Log.d("fetchProductList","${response.code()}")
                 var item = ProductList(listOf<Product>())
                 item.products = (response.body() as List<Product>)
                 _downloadProductListResponse.postValue(item)

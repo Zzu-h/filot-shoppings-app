@@ -15,9 +15,6 @@ class ProductListViewModel(lifecycleOwner: LifecycleOwner):ViewModel() {
             productList.postValue(it)
         })
     }
-    fun getProductList(name: String): Unit{
-        var list = productListRepository.fetchProductList(name)
-    }
-
+    fun getProductList(name: String): Unit = productListRepository.fetchProductList(name)
     fun setCategoryName(name: String){this.categoryName.postValue(name)}
 }

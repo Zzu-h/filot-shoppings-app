@@ -12,7 +12,7 @@ import com.zzuh.filot_shoppings.databinding.MainFragmentBinding
 import com.zzuh.filot_shoppings.ui.main.viewmodel.ProductListViewModel
 
 class MainFragment(private var viewModel: ProductListViewModel) : Fragment() {
-        lateinit var binding: MainFragmentBinding
+    lateinit var binding: MainFragmentBinding
     lateinit var adapter: ProductListAdapter
 
     override fun onCreateView(
@@ -32,6 +32,7 @@ class MainFragment(private var viewModel: ProductListViewModel) : Fragment() {
         viewModel.productList.observe(this, Observer{
             if(it == null || it.products.isEmpty()){
                 binding.noDataTv.visibility = View.VISIBLE
+                binding.productListRecyclerView.visibility = View.GONE
                 return@Observer
             }
             Log.d("tester","ok")

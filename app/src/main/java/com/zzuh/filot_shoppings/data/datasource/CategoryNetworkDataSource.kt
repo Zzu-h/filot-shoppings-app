@@ -45,7 +45,7 @@ class CategoryNetworkDataSource {
 
             override fun onResponse(call: Call<List<Category>>, response: Response<List<Category>>) {
                 if(response.isSuccessful)
-                    Log.d("tester","${response.code()}")
+                    Log.d("fetchCategoryList","${response.code()}")
                 _downloadCategoryListResponse.postValue((response.body() as List<Category>))
                 _networkState.postValue(NetworkState.LOADED)
             }

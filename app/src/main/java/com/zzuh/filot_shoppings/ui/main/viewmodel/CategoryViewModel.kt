@@ -14,7 +14,7 @@ class CategoryViewModel(lifecycleOwner: LifecycleOwner):ViewModel() {
     var mainCategoryList = MutableLiveData<List<Category>>()
     var subCategoryList = MutableLiveData<List<Category>>()
 
-    var _isMain = MutableLiveData<Boolean?>()
+    var _isMain = MutableLiveData<Boolean?>(true)
     var isMain: Boolean? get() = _isMain.value
         set(value: Boolean?) {_isMain.postValue(value)}
 

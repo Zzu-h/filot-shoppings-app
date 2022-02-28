@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         categoryViewModel = ViewModelProvider(this, CategoryViewModelFactory(this))
             .get(CategoryViewModel::class.java)
 
-        categoryFragment = CategoryFragment(productListViewModel)
+        categoryFragment = CategoryFragment(productListViewModel, categoryViewModel)
         mainFragment = MainFragment(productListViewModel)
         cartFragment = CartFragment()
 

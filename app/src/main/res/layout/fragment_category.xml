@@ -38,17 +38,25 @@
             android:text="Connection Problem!!"
             android:visibility="gone"/>
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/main_tab_layout"
+            android:id="@+id/sub_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:padding="10dp"
-            app:tabMode="scrollable"
+            app:tabMode="auto"
             app:tabTextColor="@color/gray_800"
             app:tabSelectedTextColor="@color/gray_800"
             app:tabIndicatorColor="@color/gray_800"
             app:tabTextAppearance="@style/tab_text"
             android:visibility="visible"
             />
+        <TextView
+            android:id="@+id/no_data_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="상품이 없습니다!"
+            android:textSize="20dp"
+            android:visibility="gone"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/product_list_recycler_view"
             android:layout_width="match_parent"
