@@ -1,5 +1,13 @@
 package com.zzuh.filot_shoppings.data.vo
 
 data class ProductDetails (
-    val list: List<Product>
+    val id: String,
+    val name: String,
+    val price: Int,
+    val size: String,
+    val description: String?,
+    val deliveryPrice: Int?,
+    val amount: Int,
+    val images: List<String>,
+    val colors: List<String>
     )

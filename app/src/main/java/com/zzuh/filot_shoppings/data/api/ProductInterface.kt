@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 
 const val API_KEY = "28067da966b4b33cf2e89be0850b658a"
-const val BASE_URL = "https://filot.herokuapp.com/"
+const val BASE_URL = "https://filot-shopping.herokuapp.com/"
 
 const val LAN_CODE = "ko-KR"
 const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"

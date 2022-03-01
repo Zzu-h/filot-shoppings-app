@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Filot_shoppings">
         <activity android:name=".ui.admin.CategoryManageActivity"
-            android:exported="true"/>
+            android:exported="false"/>
         <activity android:name=".ui.admin.NewProductActivity"
-            android:exported="true"/>
+            android:exported="false"/>
         <activity android:name=".ui.admin.ProductManageActivity"
-            android:exported="true"/>
+            android:exported="false"/>
         <activity android:name=".ui.admin.UserManageActivity"
-            android:exported="true"/>
+            android:exported="false"/>
         <activity
             android:name=".ui.admin.AdminActivity"
             android:exported="true">

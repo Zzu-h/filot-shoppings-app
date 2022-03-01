@@ -22,7 +22,7 @@ class ProductListAdapter(private var itemList: List<Product>, val context: Conte
         binding.nameItem.text = item.name
         binding.priceItem.text =  item.price.toString()
 
-        val moviePosterURL: String = IMAGE_BASE_URL + item.imageUrl
+        val moviePosterURL: String = item.imageUrl
 
         Glide.with(context)
             .load(moviePosterURL)
@@ -32,6 +32,7 @@ class ProductListAdapter(private var itemList: List<Product>, val context: Conte
         binding.cardView.setOnClickListener{
             val intent = Intent(context, ProductDetailActivity::class.java)
             intent.putExtra("id", item.id)
+            intent.putExtra("thumbnail", item.imageUrl)
             context.startActivity(intent)
         }
     }
