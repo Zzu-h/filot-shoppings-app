@@ -7,6 +7,7 @@ import com.zzuh.filot_shoppings.R
 import com.zzuh.filot_shoppings.ui.main.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class LaunchActivity : AppCompatActivity() {
@@ -17,7 +18,7 @@ class LaunchActivity : AppCompatActivity() {
     }
     private fun setLaunchScreenTimeOut(){
         CoroutineScope(Dispatchers.Default).launch {
-            //delay(3000)
+            delay(3000)
             startMainActivity()
         }
     }

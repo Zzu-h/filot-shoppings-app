@@ -6,6 +6,7 @@
 
 package com.zzuh.filot_shoppings.ui.main
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,11 +25,18 @@ import android.view.View
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.data.vo.Category
+import com.zzuh.filot_shoppings.ui.main.adapter.DrawerCategoryAdapter
 import com.zzuh.filot_shoppings.ui.main.viewmodel.*
+import com.zzuh.filot_shoppings.ui.user.viewmodel.UserInfoViewModel
+import com.zzuh.filot_shoppings.ui.user.viewmodel.UserInfoViewModelFactory
 import com.zzuh.filot_shoppings_login.ui.login.LoginActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 const val BANNER_IMG_URL = "https://file.cafe24cos.com/banner-admin-live/upload/joker8992/ede80c3b-076d-40e9-83c6-fb4c1f12c00b.jpeg"
 
@@ -45,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var productListViewModel: ProductListViewModel
     lateinit var categoryViewModel: CategoryViewModel
+    lateinit var userInfoViewModel: UserInfoViewModel
 
     lateinit var transaction: FragmentTransaction
     lateinit var fragmentManager: FragmentManager
@@ -68,23 +77,67 @@ class MainActivity : AppCompatActivity() {
             .load(BANNER_IMG_URL)
             .into(binding.bannerImg)
 
+        autoLogin()
         setContentView(binding.root)
 
         initToolBarSetting()
         initViewModelSetting()
-
         binding.drawerLayout.needLoginTv.setOnClickListener {
             var intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
         binding.headerTitle.setOnClickListener {
-            transaction = fragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_content, mainFragment)
-            if(categoryViewModel.isMain!!) categoryViewModel.isMain = true
-            transaction.commit()
+            changeFragment(true)
         }
     }
+    override fun onRestart() {
+        super.onRestart()
+        // room data에서 token을 받아와 유저 정보를 요청한다.
+        autoLogin()
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_header, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(toggle.onOptionsItemSelected(item)){
+            return true
+        }
+        if(item.itemId == R.id.menu_cart){
+            changeFragment(false,"cart")
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
+    private fun autoLogin(){
+        CoroutineScope(Dispatchers.Main).launch {
+            val spToken = getSharedPreferences("autoLogin", Activity.MODE_PRIVATE)
+            val token = spToken.getString("token", null) ?: return@launch
+            val email = spToken.getString("email", null) ?: return@launch
+
+            userInfoViewModel = ViewModelProvider(this@MainActivity, UserInfoViewModelFactory(email, token))
+                .get(UserInfoViewModel::class.java)
+            userInfoViewModel.userInfo.observe(this@MainActivity, Observer {
+                binding.drawerLayout.needLoginLayout.visibility = View.GONE
+                binding.drawerLayout.userNameTv.text = "${it.name}님, 안녕하세요!"
+                binding.drawerLayout.userNameTv.visibility = View.VISIBLE
+                binding.drawerLayout.profileIconIv.visibility = View.VISIBLE
+                binding.drawerLayout.editUserInfoLayout.visibility = View.VISIBLE
+                binding.drawerLayout.logoutLayout.visibility = View.VISIBLE
+                binding.drawerLayout.logoutDivider.visibility = View.VISIBLE
+            })
+            binding.drawerLayout.logoutLayout.setOnClickListener{
+                //do Logout
+                this@MainActivity.viewModelStore.clear()
+                val edit = spToken.edit()
+                edit.remove("token")
+                edit.remove("email")
+                edit.apply()
+                finish()
+                startActivity(intent)
+            }
+        }
+    }
     private fun initToolBarSetting():Unit{
         setSupportActionBar(binding.headerToolbar)
 
@@ -95,7 +148,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.drawerLayout.backBtn.setOnClickListener { binding.root.closeDrawer(GravityCompat.START) }
     }
-
     private fun initFragmentSetting():Unit{
         /*
         다음을 정리한다
@@ -127,14 +179,7 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
         binding.mainTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                if(tab != null){
-                    transaction = fragmentManager.beginTransaction()
-                    productListViewModel.setCategoryName(tab.text as String)
-                    transaction.replace(R.id.fragment_content, categoryFragment)
-                    if(categoryViewModel.isMain!!) categoryViewModel.isMain = false
-                    //transaction.addToBackStack(tab.text as String)
-                    transaction.commit()
-                }
+                tab?.let{ changeFragment(false, tab.text as String) }
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
@@ -145,13 +190,19 @@ class MainActivity : AppCompatActivity() {
                 Log.d("Tester","onTabUnselected")
             }
         })
+        binding.drawerLayout.cartLayout.setOnClickListener {
+            binding.drawer.closeDrawers()
+            changeFragment(false, "cart")
+        }
     }
     private fun initViewModelSetting(){
-        categoryViewModel._isMain.observe(this, Observer { binding.bannerImg.visibility = if (categoryViewModel.isMain!!) View.VISIBLE else View.GONE })
+        categoryViewModel._isMain.observe(this, Observer {
+            binding.bannerImg.visibility = if (categoryViewModel.isMain!!) View.VISIBLE else View.GONE
+        })
         categoryViewModel.mainCategoryList.observe(this, Observer {
-            Log.d("tester","get the category")
             this.mainCategoryList = it
             initFragmentSetting()
+            initDrawerLayoutCategorySetting()
         })
         categoryViewModel.getMainCategoryList("main")
         categoryViewModel.mainCategoryNetworkState.observe(this, Observer {
@@ -183,22 +234,34 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+    private fun initDrawerLayoutCategorySetting(){
+        val adapter = DrawerCategoryAdapter(mainCategoryList, object: DrawerCategoryAdapter.OnChangeCategory{
+            override fun changeFragment(name: String) {
+                binding.drawer.closeDrawers()
+                for(item in tabList) {
+                    if(item.text == name) {
+                        binding.mainTabLayout.selectTab(item)
+                        break
+                    }
+                }
+            }
+        }, )
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_header, menu)
-        return super.onCreateOptionsMenu(menu)
+        var gridLayout = GridLayoutManager(this, 2)
+        binding.drawerLayout.categoryRv.layoutManager = gridLayout
+        binding.drawerLayout.categoryRv.adapter = adapter
     }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(toggle.onOptionsItemSelected(item)){
-            return true
-        }
-        if(item.itemId == R.id.menu_cart){
-            transaction = fragmentManager.beginTransaction()
+    private fun changeFragment(isMain: Boolean, name: String = "main"){
+        transaction = fragmentManager.beginTransaction()
+        if(isMain)
+            transaction.replace(R.id.fragment_content, mainFragment)
+        else if(name == "cart")
             transaction.replace(R.id.fragment_content, cartFragment)
-            if(categoryViewModel.isMain!!) categoryViewModel.isMain = false
-            transaction.commit()
+        else{
+            productListViewModel.setCategoryName(name)
+            transaction.replace(R.id.fragment_content, categoryFragment)
         }
-        return super.onOptionsItemSelected(item)
+        if(categoryViewModel.isMain!!) categoryViewModel.isMain = isMain
+        transaction.commit()
     }
 }

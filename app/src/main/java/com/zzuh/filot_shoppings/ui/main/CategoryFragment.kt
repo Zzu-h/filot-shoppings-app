@@ -15,6 +15,7 @@ import com.zzuh.filot_shoppings.R
 import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.data.vo.Category
 import com.zzuh.filot_shoppings.databinding.FragmentCategoryBinding
+import com.zzuh.filot_shoppings.ui.main.adapter.ProductListAdapter
 import com.zzuh.filot_shoppings.ui.main.viewmodel.CategoryViewModel
 import com.zzuh.filot_shoppings.ui.main.viewmodel.ProductListViewModel
 

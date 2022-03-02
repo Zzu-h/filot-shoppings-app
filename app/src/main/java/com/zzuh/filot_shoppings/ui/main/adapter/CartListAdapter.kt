@@ -1,4 +1,4 @@
-package com.zzuh.filot_shoppings.ui.main
+package com.zzuh.filot_shoppings.ui.main.adapter
 
 import android.content.Context
 import android.content.Intent

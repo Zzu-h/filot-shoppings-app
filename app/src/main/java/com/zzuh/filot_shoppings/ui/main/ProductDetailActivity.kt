@@ -21,6 +21,7 @@ import com.zzuh.filot_shoppings.R
 import com.zzuh.filot_shoppings.data.vo.SelectedProductItem
 import com.zzuh.filot_shoppings.databinding.ActivityProductDetailBinding
 import com.zzuh.filot_shoppings.databinding.ImageListItemBinding
+import com.zzuh.filot_shoppings.ui.main.adapter.SelectedListAdapter
 import com.zzuh.filot_shoppings.ui.main.viewmodel.DetailsViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

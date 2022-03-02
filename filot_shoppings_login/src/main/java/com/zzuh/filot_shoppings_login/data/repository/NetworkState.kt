@@ -3,7 +3,8 @@ package com.zzuh.filot_shoppings_login.data.repository
 enum class Status {
     RUNNING,
     SUCCESS,
-    FAILED
+    LOADFAILED,
+    LOGINFAILED
 }
 
 class NetworkState(val status: Status, val msg: String) {
@@ -12,11 +13,13 @@ class NetworkState(val status: Status, val msg: String) {
         val LOADED: NetworkState
         val LOADING: NetworkState
         val ERROR: NetworkState
+        val LOGINFAIL: NetworkState
 
         init {
             LOADED = NetworkState(Status.SUCCESS, "Success")
             LOADING = NetworkState(Status.RUNNING, "Running")
-            ERROR = NetworkState(Status.FAILED, "Something went wrong")
+            ERROR = NetworkState(Status.LOADFAILED, "Something went wrong")
+            LOGINFAIL = NetworkState(Status.LOGINFAILED, "check email and password")
         }
     }
 }

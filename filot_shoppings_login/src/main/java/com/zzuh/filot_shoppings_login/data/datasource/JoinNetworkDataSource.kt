@@ -1,4 +1,4 @@
-package com.zzuh.filot_shoppings.data.datasource
+package com.zzuh.filot_shoppings_login.data.datasource
 
 class JoinNetworkDataSource {
 }

@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.databinding.MainFragmentBinding
+import com.zzuh.filot_shoppings.ui.main.adapter.ProductListAdapter
 import com.zzuh.filot_shoppings.ui.main.viewmodel.ProductListViewModel
 
 class MainFragment(private var viewModel: ProductListViewModel) : Fragment() {

@@ -19,7 +19,7 @@
             android:id="@+id/profile_icon_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/outline_shopping_cart_black_24"
+            android:src="@drawable/baseline_person_outline_black_24"
             android:layout_weight="2"
             android:visibility="gone"
             />
@@ -62,12 +62,14 @@
             />
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/edit_user_info_layout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_margin="@dimen/drawer_margin_size"
         android:clickable="true"
         android:orientation="vertical"
         android:weightSum="10"
+        android:visibility="gone"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -141,6 +143,14 @@
             android:layout_weight="1"
             />
     </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/category_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/drawer_margin_size"
+        android:layout_marginLeft="@dimen/drawer_margin_size"
+        android:layout_marginRight="@dimen/drawer_margin_size"
+        />
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -151,6 +161,7 @@
         />
 
     <LinearLayout
+        android:id="@+id/cart_layout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_margin="@dimen/drawer_margin_size"
@@ -229,7 +240,60 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|right"
                 android:visibility="visible"
-                android:src="@drawable/outline_shopping_cart_black_24"
+                android:src="@drawable/outline_vpn_key_black_24"
+                android:layout_weight="8"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/gray_500"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+    <View
+        android:id="@+id/logout_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="@color/gray_800"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        />
+    <LinearLayout
+        android:id="@+id/logout_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/drawer_margin_size"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:orientation="horizontal"
+            android:layout_weight="9"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center|left"
+                android:text="로그아웃"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:visibility="visible"
+                android:src="@drawable/outline_remove_circle_outline_black_24"
                 android:layout_weight="8"
                 />
         </LinearLayout>
