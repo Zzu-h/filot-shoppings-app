@@ -33,6 +33,7 @@ import com.zzuh.filot_shoppings.ui.main.adapter.DrawerCategoryAdapter
 import com.zzuh.filot_shoppings.ui.main.viewmodel.*
 import com.zzuh.filot_shoppings.ui.user.viewmodel.UserInfoViewModel
 import com.zzuh.filot_shoppings.ui.user.viewmodel.UserInfoViewModelFactory
+import com.zzuh.filot_shoppings_admin.ui.admin.AdminActivity
 import com.zzuh.filot_shoppings_login.ui.login.LoginActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -90,9 +91,11 @@ class MainActivity : AppCompatActivity() {
             changeFragment(true)
         }
     }
-    override fun onRestart() {
-        super.onRestart()
+    override fun onResume() {
+        super.onResume()
         // room data에서 token을 받아와 유저 정보를 요청한다.
+        binding.drawer.closeDrawers()
+        Log.d("Tester", "onResume")
         autoLogin()
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -125,6 +128,13 @@ class MainActivity : AppCompatActivity() {
                 binding.drawerLayout.editUserInfoLayout.visibility = View.VISIBLE
                 binding.drawerLayout.logoutLayout.visibility = View.VISIBLE
                 binding.drawerLayout.logoutDivider.visibility = View.VISIBLE
+                if(it.roles.contains("ROLE_ADMIN")) {
+                    binding.drawerLayout.adminPageLayout.visibility = View.VISIBLE
+                    binding.drawerLayout.adminPageLayout.setOnClickListener {
+                        val intent = Intent(this@MainActivity, AdminActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
             })
             binding.drawerLayout.logoutLayout.setOnClickListener{
                 //do Logout
