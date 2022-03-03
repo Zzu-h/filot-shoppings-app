@@ -13,8 +13,8 @@ class JoinViewModel: ViewModel() {
     val joinRepository = JoinRepository()
     val networkState: LiveData<NetworkState> get() = joinRepository.networkState
 
-    val doubleCheck = MutableLiveData<Boolean>()
-    val certificateCheck = MutableLiveData<Boolean>()
+    val doubleCheck: LiveData<NetworkState> get() = joinRepository.emailDoubleCheck
+    /*val certificateCheck: LiveData<Boolean> get() = joinRepository.emailDoubleCheck*/
     var passwordCheck = false
 
     var email: String? = null
@@ -26,7 +26,7 @@ class JoinViewModel: ViewModel() {
     var phoneNumber: String? = null
     var isMale: Boolean? = null
 
-    fun doDoubleCheck(){}
+    fun doDoubleCheck(){ joinRepository.doubleCheck(this.email!!) }
     fun doCertificateCheck(){}
     fun sendCertificateCode(){}
 
@@ -39,9 +39,9 @@ class JoinViewModel: ViewModel() {
         var msg: String? = null
         if(nullCheck())
             msg = "공란이 있습니다!"
-        /*else if(doubleCheck.value == null || doubleCheck.value == false)
+        else if(doubleCheck.value == null || doubleCheck.value == NetworkState.LOGINFAIL)
             msg = "email 중복확인을 해주세요!"
-        else if(certificateCheck.value == null || certificateCheck.value == false)
+        /*else if(certificateCheck.value == null || certificateCheck.value == false)
             msg = "email 인증을 해주세요!"*/
         else if(!passwordCheck)
             msg = "비밀번호가 일치하지 않습니다!"

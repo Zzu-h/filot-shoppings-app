@@ -126,6 +126,7 @@ class JoinActivity : AppCompatActivity() {
                         failLayout.visibility = View.VISIBLE
                         verifyLayout.visibility = View.GONE
                         failLayout.findViewById<Button>(R.id.check_btn).setOnClickListener {
+                            verifyLayout.findViewById<EditText>(R.id.name_et).setText("")
                             popupWindow.dismiss()
                         }
                     }
@@ -147,9 +148,14 @@ class JoinActivity : AppCompatActivity() {
                     val codeEt = verifyLayout.findViewById<EditText>(R.id.name_et)
                     val reSendBtn = verifyLayout.findViewById<Button>(R.id.verify_resend_btn)
                     val checkBtn = verifyLayout.findViewById<Button>(R.id.verify_check_btn)
+                    val cancelBtn = verifyLayout.findViewById<Button>(R.id.cancel_btn)
 
                     reSendBtn.setOnClickListener { joinViewModel.doJoin(this) }
                     checkBtn.setOnClickListener { joinViewModel.checkCode(this, codeEt.text.toString()) }
+                    cancelBtn.setOnClickListener {
+                        codeEt.setText("")
+                        popupWindow.dismiss()
+                    }
                 }
             }
         })

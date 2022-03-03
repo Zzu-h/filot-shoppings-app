@@ -7,5 +7,5 @@ data class JoinInfo(
     val detailAddress: String,
     val roadAddress: String,
     val phoneNumber: String,
-    val authorities: String? = "ROLE_ADMIN",
+    val authorities: String? = "ADMIN",
 )
