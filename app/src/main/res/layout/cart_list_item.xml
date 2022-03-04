@@ -20,6 +20,7 @@
         android:layout_gravity="center|top"
         android:background="@color/gray_200"
         android:visibility="visible"
+        android:clickable="true"
         android:layout_weight="5"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
@@ -41,6 +42,7 @@
             android:gravity="left"
             android:layout_marginBottom="2dp"
             android:layout_marginLeft="20dp"
+            android:clickable="true"
             />
         <View
             android:layout_width="match_parent"
@@ -108,8 +110,8 @@
                     android:layout_height="match_parent"
                     >
 
-                    <EditText
-                        android:id="@+id/item_cnt_et"
+                    <TextView
+                        android:id="@+id/item_cnt_tv"
                         android:layout_width="60dp"
                         android:layout_height="25dp"
                         android:background="@android:color/transparent"
@@ -121,22 +123,25 @@
                         android:gravity="center"
                         />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/plus_btn"
                         android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_height="20dp"
                         android:layout_marginStart="4dp"
                         android:text="+"
                         android:textSize="10dp"
+                        android:background="@color/gray_800"
+                        android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/item_cnt_et" />
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/minus_btn"
                         android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="4dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="2dp"
                         android:text="-"
                         android:textSize="10dp"
+                        android:background="@color/gray_200"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/plus_btn" />
                 </LinearLayout>

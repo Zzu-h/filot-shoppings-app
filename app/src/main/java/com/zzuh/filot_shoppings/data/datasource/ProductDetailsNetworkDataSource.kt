@@ -7,6 +7,8 @@ import com.zzuh.filot_shoppings.data.api.BASE_URL
 import com.zzuh.filot_shoppings.data.api.ProductInterface
 import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.data.vo.ProductDetails
+import com.zzuh.filot_shoppings.data.vo.SelectedProductItem
+import com.zzuh.filot_shoppings.data.vo.SendProductToBasket
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,5 +45,30 @@ class ProductDetailsNetworkDataSource {
                 _networkState.postValue(NetworkState.LOADED)
             }
         })
+    }
+    fun putProductBasket(token: String, selectedProductItem: SelectedProductItem){
+        Log.d("putProductBasket", "set")
+        val callGetDetails = api.putProductBasket(token,
+            selectedProductItem.id,
+            SendProductToBasket(
+                selectedProductItem.count,
+                selectedProductItem.color,
+                selectedProductItem.size.toString()
+            )
+        )
+        _networkState.postValue(NetworkState.LOADING)
+        Log.d("putProductBasket", "start")
+        callGetDetails.enqueue(object :Callback<Unit>{
+            override fun onFailure(call: Call<Unit>, t: Throwable) {
+                Log.d("putProductBasket", t.printStackTrace().toString())
+                _networkState.postValue(NetworkState.ERROR)
+            }
+
+            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                Log.d("putProductBasket", "${response.raw()}")
+                _networkState.postValue(NetworkState.LOADED)
+            }
+        })
+        Log.d("putProductBasket", "end")
     }
 }

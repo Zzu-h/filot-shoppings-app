@@ -1,5 +1,6 @@
 package com.zzuh.filot_shoppings.ui.main
 
+import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,27 +8,29 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.Target
 import com.zzuh.filot_shoppings.R
+import com.zzuh.filot_shoppings.data.vo.Product
 import com.zzuh.filot_shoppings.data.vo.SelectedProductItem
+import com.zzuh.filot_shoppings.data.vo.SelectedProductList
 import com.zzuh.filot_shoppings.databinding.ActivityProductDetailBinding
 import com.zzuh.filot_shoppings.databinding.ImageListItemBinding
 import com.zzuh.filot_shoppings.ui.main.adapter.SelectedListAdapter
+import com.zzuh.filot_shoppings.ui.main.viewmodel.CartViewModel
+import com.zzuh.filot_shoppings.ui.main.viewmodel.CartViewModelFactory
 import com.zzuh.filot_shoppings.ui.main.viewmodel.DetailsViewModel
+import com.zzuh.filot_shoppings.ui.main.viewmodel.DetailsViewModelFactory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
 class ProductDetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityProductDetailBinding
@@ -36,8 +39,11 @@ class ProductDetailActivity : AppCompatActivity() {
     lateinit var selectedListAdapter: SelectedListAdapter
     lateinit var imageListAdapter: ImageListAdapter
 
-    lateinit var sizeList: List<String>
-    lateinit var colorList: List<String>
+    lateinit var sizeList: MutableList<String>
+    lateinit var colorList: MutableList<String>
+
+    var selectedItemSizeIdx: Int = 0
+    var selectedItemColorIdx: Int = 0
 
     val productId: Int by lazy {
         intent.getIntExtra("id", 0)
@@ -49,34 +55,64 @@ class ProductDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProductDetailBinding.inflate(layoutInflater)
-        detailsViewModel = DetailsViewModel(productId)
-                /*ViewModelProvider(this)
-            .get(DetailsViewModel::class.java)*/
-        selectedListAdapter = SelectedListAdapter(emptyList())
+        detailsViewModel = ViewModelProvider(this, DetailsViewModelFactory(productId))
+            .get(DetailsViewModel::class.java)
+        selectedListAdapter = SelectedListAdapter(detailsViewModel, emptyList())
         imageListAdapter = ImageListAdapter(emptyList())
 
         binding.selectedListRecyclerView.adapter = selectedListAdapter
         binding.descriptionImageRv.adapter = imageListAdapter
 
         setContentView(binding.root)
-        binding.backBtn.setOnClickListener { finish() }
 
         viewModelSetting()
+        buttonSetting()
     }
     private fun spinnerSetting(){
+        sizeList.add(0, "")
+        colorList.add(0, "")
         val sizeAdapter = ArrayAdapter(this, R.layout.spinner_dropdown_item, sizeList)
         val colorAdapter = ArrayAdapter(this, R.layout.spinner_dropdown_item, colorList)
         binding.productSizeSpinner.adapter = sizeAdapter
         binding.productColorSpinner.adapter = colorAdapter
         binding.productSizeSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                Log.d("Tester", "selected $position")
+                selectedItemSizeIdx = position
+                checkAllOptionSelected()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 Log.d("Tester", "nothing")
             }
         }
+        binding.productColorSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                selectedItemColorIdx = position
+                checkAllOptionSelected()
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                Log.d("Tester", "nothing")
+            }
+        }
+    }
+    private fun checkAllOptionSelected(){
+        if(selectedItemColorIdx == 0 || selectedItemSizeIdx == 0) return
+        val list = detailsViewModel.selectedList.value?.list as MutableList
+        list.add(SelectedProductItem(
+            id = productId,
+            name = detailsViewModel.product.value!!.name,
+            color = colorList[selectedItemColorIdx],
+            size = sizeList[selectedItemSizeIdx].toInt(),
+            price = detailsViewModel.product.value!!.price,
+        ))
+        detailsViewModel.selectedList.postValue( SelectedProductList(list) )
+        var tot = detailsViewModel.totPrice.value
+        tot?.apply { tot += detailsViewModel.product.value!!.price }
+        detailsViewModel.totPrice.postValue(tot)
+
+        selectedItemColorIdx = 0
+        selectedItemSizeIdx = 0
     }
     private fun viewModelSetting(){
         detailsViewModel.product.observe(this, Observer {
@@ -97,8 +133,8 @@ class ProductDetailActivity : AppCompatActivity() {
                         .load(thumbnail)
                         .into(binding.productImg)
                 }
-                colorList = it.colors
-                sizeList = it.size.split(",")
+                colorList = it.colors as MutableList<String>
+                sizeList = it.size.split(",") as MutableList<String>
                 spinnerSetting()
                 delay(500)
                 imageListAdapter.updateData(it.images)
@@ -106,7 +142,35 @@ class ProductDetailActivity : AppCompatActivity() {
                 binding.detailContentLayout.visibility = View.VISIBLE
             }
         })
+        detailsViewModel.selectedList.postValue(SelectedProductList(emptyList<SelectedProductItem>().toMutableList()))
         detailsViewModel.selectedList.observe(this, Observer { selectedListAdapter.updateData(it.list as List<SelectedProductItem>) })
+        detailsViewModel.totPrice.observe(this, Observer {
+            Log.d("Total Price", "$it")
+            binding.totPriceTv.text = "KRW $it"
+        })
+    }
+    private fun buttonSetting(){
+        binding.backBtn.setOnClickListener { finish() }
+        binding.cartBtn.setOnClickListener {
+            if(detailsViewModel.selectedList.value == null || detailsViewModel.selectedList.value!!.list.isEmpty()) {
+                Toast.makeText(this,"상품을 선택해 주세요!",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            val token = checkLogined()
+            if(token == null){
+                Toast.makeText(this,"로그인이 필요합니다!",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            Log.d("basket","start")
+            for(item in detailsViewModel.selectedList.value!!.list)
+                detailsViewModel.putProductBasket(token, item)
+        }
+    }
+    private fun checkLogined(): String?{
+        return getSharedPreferences(
+            "autoLogin",
+            Activity.MODE_PRIVATE)
+            .getString("token", null)
     }
 }
 

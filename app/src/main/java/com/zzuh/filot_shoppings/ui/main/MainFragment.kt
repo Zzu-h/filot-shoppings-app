@@ -37,7 +37,6 @@ class MainFragment(private var viewModel: ProductListViewModel) : Fragment() {
                 binding.productListRecyclerView.visibility = View.GONE
                 return@Observer
             }
-            Log.d("tester","ok")
             adapter.updateData(it.products)
             adapter.notifyDataSetChanged()
         })

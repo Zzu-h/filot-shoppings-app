@@ -1,7 +1,7 @@
 package com.zzuh.filot_shoppings.data.vo
 
 data class SelectedProductList (
-    val list: MutableList<Product>
+    val list: MutableList<SelectedProductItem>
     )
 
 data class SelectedProductItem(
@@ -10,5 +10,10 @@ data class SelectedProductItem(
     val color: String,
     val size: Int,
     val price: Int,
-    val count: Int = 1
+    var count: Int = 1
+)
+data class SendProductToBasket(
+    var count: Int,
+    val color: String,
+    val size: String,
 )

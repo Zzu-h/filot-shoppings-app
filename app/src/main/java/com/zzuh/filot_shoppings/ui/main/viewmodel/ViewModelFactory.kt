@@ -22,3 +22,21 @@ class CategoryViewModelFactory (private val lifecycleOwner: LifecycleOwner) : Vi
         }
     }
 }
+class CartViewModelFactory (private val token: String) : ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        return if (modelClass.isAssignableFrom(CartViewModel::class.java)) {
+            CartViewModel(token) as T
+        } else {
+            throw IllegalArgumentException()
+        }
+    }
+}
+class DetailsViewModelFactory (private val productId: Int) : ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        return if (modelClass.isAssignableFrom(DetailsViewModel::class.java)) {
+            DetailsViewModel(productId) as T
+        } else {
+            throw IllegalArgumentException()
+        }
+    }
+}

@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.zzuh.filot_shoppings.data.vo.SelectedProductItem
 import com.zzuh.filot_shoppings.databinding.SelectedListItemBinding
+import com.zzuh.filot_shoppings.ui.main.viewmodel.DetailsViewModel
 
 class SelectedListViewHolder(val binding: SelectedListItemBinding): RecyclerView.ViewHolder(binding.root)
 
-class SelectedListAdapter(private var itemList: List<SelectedProductItem>): RecyclerView.Adapter<SelectedListViewHolder>() {
+class SelectedListAdapter(private val detailsViewModel: DetailsViewModel,private var itemList: List<SelectedProductItem>): RecyclerView.Adapter<SelectedListViewHolder>() {
     override fun getItemCount(): Int = itemList.size
 
     override fun onBindViewHolder(holder: SelectedListViewHolder, position: Int) {
@@ -22,14 +23,23 @@ class SelectedListAdapter(private var itemList: List<SelectedProductItem>): Recy
 
         binding.plusBtn.setOnClickListener {
             if(item.count<10) {
-                item.count.inc()
+                item.count = (item.count + 1)
+                val totPrice = detailsViewModel.totPrice.value
+                totPrice?.apply { detailsViewModel.totPrice.postValue(totPrice + item.price) }
                 binding.itemCntEt.setText("${item.count}")
             }
         }
-        binding.plusBtn.setOnClickListener {
+        binding.minusBtn.setOnClickListener {
             if(item.count > 0) {
-                item.count.dec()
+                item.count = (item.count - 1)
+                val totPrice = detailsViewModel.totPrice.value
+                totPrice?.apply { detailsViewModel.totPrice.postValue(totPrice - item.price) }
                 binding.itemCntEt.setText("${item.count}")
+            }
+            if(item.count == 0){
+                val list = this.itemList as MutableList
+                list.removeAt(position)
+                this.updateData(list)
             }
         }
     }

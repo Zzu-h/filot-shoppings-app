@@ -3,13 +3,10 @@ package com.zzuh.filot_shoppings.data.api
 import com.zzuh.filot_shoppings.data.vo.Product
 import com.zzuh.filot_shoppings.data.vo.ProductDetails
 import com.zzuh.filot_shoppings.data.vo.ProductList
+import com.zzuh.filot_shoppings.data.vo.SendProductToBasket
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
-
-const val API_KEY = "28067da966b4b33cf2e89be0850b658a"
 const val BASE_URL = "https://filot-shopping.herokuapp.com/"
 
 const val LAN_CODE = "ko-KR"
@@ -25,4 +22,11 @@ interface ProductInterface {
     fun getProductDetails(
         @Path("id") id: Int
     ): Call<ProductDetails>
+
+    @POST("/products/{id}/baskets")
+    fun putProductBasket(
+        @Header("X-AUTH-TOKEN") token: String,
+        @Path("id") productId: Int,
+        @Body sendProductToBasket: SendProductToBasket
+    ): Call<Unit>
 }

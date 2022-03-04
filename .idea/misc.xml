@@ -43,7 +43,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14" />
         <entry key="app/src/main/res/layout/activity_product_detail.xml" value="0.26944122314453123" />
         <entry key="app/src/main/res/layout/activity_user_manage.xml" value="0.121875" />
-        <entry key="app/src/main/res/layout/cart_list_item.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/cart_list_item.xml" value="0.48470458984375" />
         <entry key="app/src/main/res/layout/drawer_category_list_item.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/drawer_layout.xml" value="0.2526041666666667" />
         <entry key="app/src/main/res/layout/footer.xml" value="0.380803240976377" />
@@ -54,7 +54,7 @@
         <entry key="app/src/main/res/layout/image_list_item.xml" value="0.3609375" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.25677083333333334" />
         <entry key="app/src/main/res/layout/product_list_item.xml" value="0.25677083333333334" />
-        <entry key="app/src/main/res/layout/selected_list_item.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/selected_list_item.xml" value="1.390136413574219" />
         <entry key="app/src/main/res/layout/spinner_dropdown_item.xml" value="0.20052083333333334" />
         <entry key="app/src/main/res/layout/temp_layout.xml" value="0.19947916666666668" />
         <entry key="app/src/main/res/menu/header.xml" value="0.3553846153846154" />

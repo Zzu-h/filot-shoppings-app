@@ -23,10 +23,10 @@ class ProductListAdapter(private var itemList: List<Product>, val context: Conte
         binding.nameItem.text = item.name
         binding.priceItem.text =  item.price.toString()
 
-        val moviePosterURL: String = item.imageUrl
+        val productURL: String = item.imageUrl
 
         Glide.with(context)
-            .load(moviePosterURL)
+            .load(productURL)
             .into(binding.imageItem)
 
         binding.cardView.isClickable = true

@@ -217,6 +217,7 @@
                             android:textStyle="bold"
                             />
                         <TextView
+                            android:id="@+id/tot_price_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="KRW $price"
@@ -230,6 +231,7 @@
                         android:orientation="horizontal">
 
                         <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/purchase_btn"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             android:layout_margin="1dp"
@@ -239,6 +241,7 @@
                             android:textColor="@color/white"
                             android:textSize="@dimen/item_text_size" />
                         <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/cart_btn"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             android:layout_weight="1"

@@ -59,20 +59,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/color_size_tv" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/plus_btn"
         android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_height="20dp"
         android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/gray_800"
         android:text="+"
+        android:textColor="@color/white"
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/item_cnt_et" />
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/minus_btn"
         android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/gray_200"
         android:text="-"
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
