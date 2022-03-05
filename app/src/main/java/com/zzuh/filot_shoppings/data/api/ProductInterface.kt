@@ -13,12 +13,12 @@ const val LAN_CODE = "ko-KR"
 const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
 
 interface ProductInterface {
-    @GET("/product-list/{name}")
+    @GET("/products/{name}")
     fun getProductList(
         @Path("name") name: String
     ): Call<List<Product>>
 
-    @GET("/products/{id}")
+    @GET("/product/{id}")
     fun getProductDetails(
         @Path("id") id: Int
     ): Call<ProductDetails>
