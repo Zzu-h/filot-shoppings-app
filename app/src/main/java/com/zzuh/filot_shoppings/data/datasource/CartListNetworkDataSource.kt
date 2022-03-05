@@ -77,8 +77,8 @@ class CartListNetworkDataSource {
             }
 
             override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                if(response.isSuccessful)
                     Log.d("deleteProductBasket","${response}")
+                //if(response.isSuccessful)
             }
         })
     }
