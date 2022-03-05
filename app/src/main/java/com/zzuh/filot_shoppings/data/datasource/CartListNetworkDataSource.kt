@@ -67,4 +67,19 @@ class CartListNetworkDataSource {
             }
         })
     }
+    fun deleteProductBasket(token: String, basketId: Int){
+        val callGetList = api.deleteProductBasket(token,basketId)
+        Log.d("deleteProductBasket","start")
+        callGetList.enqueue(object :Callback<Unit>{
+            override fun onFailure(call: Call<Unit>, t: Throwable) {
+                Log.d("deleteProductBasket","error")
+                t.printStackTrace()
+            }
+
+            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                if(response.isSuccessful)
+                    Log.d("deleteProductBasket","${response}")
+            }
+        })
+    }
 }

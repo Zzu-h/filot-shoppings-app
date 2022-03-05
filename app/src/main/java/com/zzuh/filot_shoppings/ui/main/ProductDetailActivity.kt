@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.Target
 import com.zzuh.filot_shoppings.R
+import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.data.vo.Product
 import com.zzuh.filot_shoppings.data.vo.SelectedProductItem
 import com.zzuh.filot_shoppings.data.vo.SelectedProductList
@@ -164,6 +165,12 @@ class ProductDetailActivity : AppCompatActivity() {
             Log.d("basket","start")
             for(item in detailsViewModel.selectedList.value!!.list)
                 detailsViewModel.putProductBasket(token, item)
+            detailsViewModel.networkState.observe(this, Observer {
+                when(it){
+                    NetworkState.LOADED -> finish()
+                    NetworkState.ERROR -> Toast.makeText(this,"상품 물량 부족 또는 네트워크 상태 이상!",Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
     private fun checkLogined(): String?{

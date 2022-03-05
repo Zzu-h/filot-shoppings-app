@@ -33,16 +33,16 @@ class ProductDetailsNetworkDataSource {
 
     fun fetchProductDetails(id: Int){
         val callGetDetails = api.getProductDetails(id)
-        _networkState.postValue(NetworkState.LOADING)
+        //_networkState.postValue(NetworkState.LOADING)
         callGetDetails.enqueue(object :Callback<ProductDetails>{
             override fun onFailure(call: Call<ProductDetails>, t: Throwable) {
                 Log.d("fetchProductDetails", t.printStackTrace().toString())
-                _networkState.postValue(NetworkState.ERROR)
+                //_networkState.postValue(NetworkState.ERROR)
             }
 
             override fun onResponse(call: Call<ProductDetails>, response: Response<ProductDetails>) {
                 _downloadProductDetailsResponse.postValue(response.body() as ProductDetails)
-                _networkState.postValue(NetworkState.LOADED)
+                //_networkState.postValue(NetworkState.LOADED)
             }
         })
     }
@@ -65,8 +65,11 @@ class ProductDetailsNetworkDataSource {
             }
 
             override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                if(response.isSuccessful)
+                    _networkState.postValue(NetworkState.LOADED)
+                else
+                    _networkState.postValue(NetworkState.ERROR)
                 Log.d("putProductBasket", "${response.raw()}")
-                _networkState.postValue(NetworkState.LOADED)
             }
         })
         Log.d("putProductBasket", "end")

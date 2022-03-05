@@ -13,5 +13,6 @@ class CartViewModel(private val token: String):ViewModel() {
     val basket: LiveData<List<BasketItem>> by lazy { cartListRepository.fetchCartList(token) }
     val totPrice = MutableLiveData<Int>(0)
 
-    fun updateProductCnt(productId: Int, cnt: Int){cartListRepository.updateProductCnt(token, productId, cnt)}
+    fun updateProductCnt(basketId: Int, cnt: Int){cartListRepository.updateProductCnt(token, basketId, cnt)}
+    fun deleteProductBasket(basketId: Int){cartListRepository.deleteProductBasket(token, basketId)}
 }

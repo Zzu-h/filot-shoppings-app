@@ -20,4 +20,9 @@ interface BasketInterface {
         @Path("baskets-id") productId: Int,
         @Query("cnt") cnt: Int
     ): Call<Unit>
+    @DELETE("/users/baskets/{baskets-id}")
+    fun deleteProductBasket(
+        @Header("X-AUTH-TOKEN") token: String,
+        @Path("baskets-id") basketId: Int,
+    ): Call<Unit>
 }

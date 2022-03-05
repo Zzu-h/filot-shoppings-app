@@ -48,7 +48,7 @@ class CartListAdapter(private val context: Context,private val cartViewModel: Ca
         binding.plusBtn.setOnClickListener {
             if(item.selectedCount<10) {
                 item.selectedCount = (item.selectedCount +1)
-                cartViewModel.updateProductCnt(item.productId, item.selectedCount)
+                cartViewModel.updateProductCnt(item.id, item.selectedCount)
                 val totPrice = cartViewModel.totPrice.value
                 totPrice?.apply { cartViewModel.totPrice.postValue(totPrice + item.productPrice) }
                 binding.itemCntTv.setText("${item.selectedCount}")
@@ -57,10 +57,17 @@ class CartListAdapter(private val context: Context,private val cartViewModel: Ca
         binding.minusBtn.setOnClickListener {
             if(item.selectedCount > 0) {
                 item.selectedCount = (item.selectedCount -1)
-                cartViewModel.updateProductCnt(item.productId, item.selectedCount)
+                cartViewModel.updateProductCnt(item.id, item.selectedCount)
                 val totPrice = cartViewModel.totPrice.value
                 totPrice?.apply { cartViewModel.totPrice.postValue(totPrice - item.productPrice) }
                 binding.itemCntTv.setText("${item.selectedCount}")
+            }
+            if(item.selectedCount == 0){
+                val list = this.itemList as MutableList
+                //Log.d("bkId/prId", "${item.id}/${item.productId}")
+                //cartViewModel.deleteProductBasket(item.id)
+                list.removeAt(position)
+                this.updateData(list)
             }
         }
     }

@@ -14,4 +14,5 @@ class CartListRepository {
     }
     fun updateProductCnt(token: String, id: Int, cnt: Int):Unit
         = cartListDataSource.updateProductCnt(token, id, cnt)
+    fun deleteProductBasket(token: String, basketId: Int){cartListDataSource.deleteProductBasket(token, basketId)}
 }

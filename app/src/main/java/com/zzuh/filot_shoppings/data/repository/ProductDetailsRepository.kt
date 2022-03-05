@@ -12,7 +12,7 @@ class ProductDetailsRepository {
         return dataSource.downloadProductDetailsResponse
     }
 
-    fun getProductListNetworkState(): LiveData<NetworkState> = dataSource.networkState
+    val networkState: LiveData<NetworkState> get() = dataSource.networkState
     fun putProductBasket(token: String, selectedProductItem: SelectedProductItem){
         dataSource.putProductBasket(token, selectedProductItem)
     }
