@@ -15,9 +15,9 @@ class FindUserActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.cancelBtn.setOnClickListener { finish() }
         binding.authNumberBtn.setOnClickListener {
-            binding.emailEv.isEnabled = false
-            binding.phoneNumberEv.isEnabled = false
-            binding.authNumberEv.isEnabled = false
+            binding.emailEt.isEnabled = false
+            binding.phoneNumberEt.isEnabled = false
+            binding.authNumberEt.isEnabled = false
             binding.joinBtn.isClickable = true
             binding.changePasswordLayout.visibility = View.VISIBLE
         }
