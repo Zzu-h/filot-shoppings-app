@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface CategoryInterface {
-    @GET("/category-list/{name}")
+    @GET("/categories/{name}")
     fun getCategoryList(
         @Path("name") name: String
     ): Call<List<Category>>

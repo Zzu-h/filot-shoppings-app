@@ -93,54 +93,70 @@
                     tools:ignore="UseAppTint" />
             </LinearLayout>
         </LinearLayout>
-        <TableLayout
-            android:id="@+id/manage_table"
+        <ProgressBar
+            android:id="@+id/loading_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:minHeight="200dp"
+            android:visibility="gone"
+            />
+        <LinearLayout
+            android:id="@+id/loaded_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:stretchColumns="0,1,2"
+            android:orientation="vertical"
             >
-            <TableRow
-                android:minHeight="40dp"
-                android:gravity="center"
-                android:background="@drawable/table_row_bottom_border"
+            <TableLayout
+                android:id="@+id/user_manage_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:stretchColumns="0,1,2"
                 >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="email"
+                <TableRow
+                    android:minHeight="40dp"
                     android:gravity="center"
-                    android:layout_weight="2"
-                    android:textSize="@dimen/table_cell_size"
-                     />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textSize="@dimen/table_cell_size"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/table_cell_side_border"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="class"
-                    android:textSize="@dimen/table_cell_size"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    />
-            </TableRow>
-        </TableLayout>
+                    android:background="@drawable/table_row_bottom_border"
+                    >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="email"
+                        android:gravity="center"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/table_cell_size"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="name"
+                        android:textSize="@dimen/table_cell_size"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_cell_side_border"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="class"
+                        android:textSize="@dimen/table_cell_size"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        />
+                </TableRow>
+            </TableLayout>
 
-        <TextView
-            android:id="@+id/no_data_tv"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="현재 데이터가 없습니다."
-            android:gravity="center"
-            />
+            <TextView
+                android:id="@+id/no_data_tv"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="현재 데이터가 없습니다."
+                android:gravity="center"
+                android:visibility="visible"
+                />
+        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
