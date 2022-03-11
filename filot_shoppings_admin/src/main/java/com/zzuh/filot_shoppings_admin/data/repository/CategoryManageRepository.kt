@@ -14,4 +14,6 @@ class CategoryManageRepository {
         dataSource.fetchCategoryAllList()
         return dataSource.downloadCategoryListResponse
     }
+    fun addSubCategory(token: String, parent: String, child: String):
+            Unit = dataSource.addSubCategory(token, parent, child)
 }

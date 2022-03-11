@@ -9,3 +9,7 @@ data class Category(
     val id: Int,
     val name: String,
 )
+data class NewCategory(
+    val parentName: String,
+    val name: String
+)
