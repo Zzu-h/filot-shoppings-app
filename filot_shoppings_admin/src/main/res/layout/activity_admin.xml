@@ -253,17 +253,20 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
-            <androidx.appcompat.widget.AppCompatEditText
+            <TextView
+                android:id="@+id/banner_set_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="60dp"
-                android:hint="url"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:hint="Banner img"
                 android:textSize="@dimen/item_text_size"
                 android:paddingLeft="18dp"
                 android:inputType="textUri"
                 android:layout_weight="1"
+                android:clickable="true"
                 />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/banner_set_btn"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:text="설정"
