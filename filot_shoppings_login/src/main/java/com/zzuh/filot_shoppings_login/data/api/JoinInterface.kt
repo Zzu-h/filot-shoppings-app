@@ -13,11 +13,11 @@ interface JoinInterface {
     fun emailDoubleCheck(
         @Query("email") email: String
     ): Call<Unit>
-    @POST("/mail-test-join")
+    @POST("/join")
     fun emailVerify(
         @Body joinInfo: JoinInfo
     ): Call<Unit>
-    @POST("/verify-code")
+    @GET("/join")
     fun verifyCheck(
         @Header("cookie") cookie: String,
         @Query("code") code: String
