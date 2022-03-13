@@ -6,6 +6,7 @@ enum class Status {
     LOADFAILED,
     LOGINFAILED,
     CHECKINGCODE,
+    EXIST_EMAIL,
 }
 
 class NetworkState(val status: Status, val msg: String) {
@@ -16,6 +17,7 @@ class NetworkState(val status: Status, val msg: String) {
         val ERROR: NetworkState
         val LOGINFAIL: NetworkState
         val CHECKINGCODE: NetworkState
+        val EXIST_EMAIL: NetworkState
 
         init {
             LOADED = NetworkState(Status.SUCCESS, "Success")
@@ -23,6 +25,7 @@ class NetworkState(val status: Status, val msg: String) {
             ERROR = NetworkState(Status.LOADFAILED, "Something went wrong")
             LOGINFAIL = NetworkState(Status.LOGINFAILED, "check email and password")
             CHECKINGCODE = NetworkState(Status.CHECKINGCODE, "check the verify code")
+            EXIST_EMAIL = NetworkState(Status.EXIST_EMAIL, "exist the email")
         }
     }
 }
