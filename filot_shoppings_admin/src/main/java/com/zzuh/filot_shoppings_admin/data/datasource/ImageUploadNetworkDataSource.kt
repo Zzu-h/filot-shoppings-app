@@ -59,6 +59,6 @@ class ImageUploadNetworkDataSource {
         val file = File(path)
         val requestBody: RequestBody = RequestBody.create(MediaType.parse("image/*"), file)
 
-        return MultipartBody.Part.createFormData(name, null, requestBody)
+        return MultipartBody.Part.createFormData(name, name, requestBody)
     }
 }
