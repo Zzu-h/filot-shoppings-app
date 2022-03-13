@@ -11,6 +11,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.PopupWindow
+import android.widget.Toast
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.zzuh.filot_shoppings_login.R
 import com.zzuh.filot_shoppings_login.data.repository.LoginRepository
@@ -90,6 +93,11 @@ class LoginActivity : AppCompatActivity() {
                         spEditor.apply()
                         finish()
                     }
+                }
+                NetworkState.ERROR -> {
+                    if(popupWindow.isShowing)
+                        popupWindow.dismiss()
+                    Toast.makeText(this,"네트워크에 문제가 발생했습니다!", Toast.LENGTH_SHORT).show()
                 }
             }
         })
