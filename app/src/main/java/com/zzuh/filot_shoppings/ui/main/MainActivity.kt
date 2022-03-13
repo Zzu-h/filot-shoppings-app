@@ -39,18 +39,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-//const val BANNER_IMG_URL = "https://file.cafe24cos.com/banner-admin-live/upload/joker8992/ede80c3b-076d-40e9-83c6-fb4c1f12c00b.jpeg"
-
 class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var binding: ActivityMainBinding
 
     var mainCategoryList = emptyList<Category>()
     var tabList = mutableListOf<TabLayout.Tab>()
-    val BANNER_IMG_URL by lazy {
-        val intent = Intent()
-        intent.getStringExtra("banner")
-    }
+    val BANNER_IMG_URL by lazy { intent.getStringExtra("banner") }
 
     lateinit var mainFragment: MainFragment
     lateinit var cartFragment: CartFragment

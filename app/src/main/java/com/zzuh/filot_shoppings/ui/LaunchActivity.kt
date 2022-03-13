@@ -86,7 +86,7 @@ class LaunchActivity : AppCompatActivity() {
         finish()
     }
     interface BannerInterface {
-        @GET("/admin/banner")
+        @GET("/admin/banners")
         fun getBannerUrl(): Call<String>
     }
 }
