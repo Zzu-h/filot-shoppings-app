@@ -27,6 +27,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.data.vo.Category
 import com.zzuh.filot_shoppings.ui.main.adapter.DrawerCategoryAdapter
@@ -75,6 +76,8 @@ class MainActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(BANNER_IMG_URL)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .skipMemoryCache(true)
             .into(binding.bannerImg)
 
         autoLogin()
@@ -270,7 +273,7 @@ class MainActivity : AppCompatActivity() {
             productListViewModel.setCategoryName(name)
             transaction.replace(R.id.fragment_content, categoryFragment)
         }
-        if(categoryViewModel.isMain!!) categoryViewModel.isMain = isMain
+        categoryViewModel.isMain = isMain
         transaction.commit()
     }
 }
