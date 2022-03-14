@@ -94,6 +94,22 @@ class NewProductActivity : AppCompatActivity() {
             val adapter = ArrayAdapter(this, R.layout.spinner_dropdown_item, categoryList)
             binding.categoryItem.adapter = adapter
         })
+        newProductViewModel.productManageNetworkState.observe(this, Observer {
+            when(it){
+                NetworkState.LOADING -> {
+                    binding.newProductLayout.isGone = true
+                    binding.loadingProgressBar.isVisible = true
+                }
+                NetworkState.ERROR -> {
+                    binding.newProductLayout.isVisible = true
+                    binding.loadingProgressBar.isGone = true
+                }
+                NetworkState.LOADED -> {
+                    Toast.makeText(this, "성공적으로 상품을 등록했습니다!", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+            }
+        })
     }
     private fun spinnerSetting(){
         binding.categoryItem.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{

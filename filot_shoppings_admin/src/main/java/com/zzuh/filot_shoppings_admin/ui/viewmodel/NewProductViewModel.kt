@@ -6,13 +6,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.zzuh.filot_shoppings_admin.data.repository.NetworkState
-import com.zzuh.filot_shoppings_admin.data.repository.NewProductRepository
+import com.zzuh.filot_shoppings_admin.data.repository.ProductManageRepository
 import com.zzuh.filot_shoppings_admin.data.vo.MainCategory
+import com.zzuh.filot_shoppings_admin.data.vo.ProductInfo
 
 class NewProductViewModel(private val token: String):ViewModel() {
-    private val newProductRepository = NewProductRepository()
-    val categoryNetworkState: LiveData<NetworkState> get() = newProductRepository.categoryNetworkState
-    val categoryList: LiveData<List<MainCategory>> by lazy { newProductRepository.fetchCategoryAllList() }
+    private val productManageRepository = ProductManageRepository()
+    val categoryNetworkState: LiveData<NetworkState> get() = productManageRepository.categoryNetworkState
+    val productManageNetworkState: LiveData<NetworkState> get() = productManageRepository.productManageNetworkState
+
+    val categoryList: LiveData<List<MainCategory>> by lazy { productManageRepository.fetchCategoryAllList() }
 
     var thumbnailConfirm = false
 
@@ -27,26 +30,21 @@ class NewProductViewModel(private val token: String):ViewModel() {
     var amount: Int? = null
 
     fun addProduct(context: Context){
-        /*
-         * 1. null check
-         * 2. email 중복, 인증확인 check
-         * 3. 비밀번호 일치 check
-         */
         var msg: String? = null
         if(nullCheck())
             msg = "공란이 있습니다!"
         else if(!thumbnailConfirm)
             msg = "대표 이미지를 확정해 주세요!"
         else
-            msg = size
-            /*joinRepository.doJoin(JoinInfo(
-                email = this.categoryName!!,
-                password = this.path!!,
-                detailAddress = this.size!!,
-                roadAddress = this.description!!,
-                name = this.name!!,
-                phoneNumber = this.color!!
-            ))*/
+            productManageRepository.addNewProduct(token,path!!, ProductInfo(
+                name = name!!,
+                price = price!!,
+                amount = amount!!,
+                size = size!!,
+                description = description!!,
+                color = color!!,
+                categoryName = categoryName!!
+            ))
 
         if(msg != null)
             Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
