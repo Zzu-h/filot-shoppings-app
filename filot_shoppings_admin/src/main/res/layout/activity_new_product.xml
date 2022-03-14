@@ -46,13 +46,22 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <ProgressBar
+        android:id="@+id/loading_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/new_product_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="50dp"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +89,7 @@
                     android:id="@+id/product_title_item"
                     android:layout_marginLeft="20dp"
                     android:gravity="center"
-                    android:text="Item title"
+                    android:hint="Item title"
                     android:textColor="@color/black"
                     android:textSize="@dimen/item_text_size" />
             </TableRow>
@@ -100,11 +109,31 @@
                     android:id="@+id/product_price_item"
                     android:layout_marginLeft="20dp"
                     android:gravity="center"
-                    android:text="KRW $price"
+                    android:hint="KRW $price"
+                    android:textColor="@color/black"
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/item_text_size" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="@dimen/table_top_margin_size"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="CATEGORY"
+                    android:textSize="@dimen/item_text_size" />
+
+                <Spinner
+                    android:id="@+id/category_item"
+                    android:layout_marginLeft="20dp"
+                    android:paddingLeft="20dp"
+                    android:gravity="center"
+                    android:hint="color,color,color"
                     android:textColor="@color/black"
                     android:textSize="@dimen/item_text_size" />
             </TableRow>
-
             <TableRow
                 android:layout_marginTop="@dimen/table_top_margin_size"
                 android:paddingLeft="10dp"
@@ -120,7 +149,7 @@
                     android:id="@+id/product_colors_item"
                     android:layout_marginLeft="20dp"
                     android:gravity="center"
-                    android:text="colors"
+                    android:hint="color,color,color"
                     android:textColor="@color/black"
                     android:textSize="@dimen/item_text_size" />
             </TableRow>
@@ -129,6 +158,27 @@
                 android:layout_marginTop="@dimen/table_top_margin_size"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="AMOUNT"
+                    android:textSize="@dimen/item_text_size" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/amount_item"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:hint="Count"
+                    android:textColor="@color/black"
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/item_text_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="@dimen/table_top_margin_size"
+                android:paddingLeft="10dp"
+                >
 
                 <TextView
                     android:gravity="center"
@@ -227,17 +277,18 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             >
+
                             <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/size_et"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:minWidth="90dp"
-                                android:hint="직접추가"
-                                android:textSize="@dimen/item_text_size"
-                                android:inputType="textEmailAddress"
-                                android:gravity="center"
                                 android:layout_weight="1"
-                                />
-                            <androidx.appcompat.widget.AppCompatButton
+                                android:gravity="center"
+                                android:hint="직접추가"
+                                android:inputType="numberDecimal"
+                                android:minWidth="90dp"
+                                android:textSize="@dimen/item_text_size" />
+                            <!--<androidx.appcompat.widget.AppCompatButton
                                 android:layout_width="30dp"
                                 android:layout_height="20dp"
                                 android:text="add"
@@ -245,7 +296,7 @@
                                 android:background="@color/gray_800"
                                 android:textColor="@color/white"
                                 android:layout_weight="0"
-                                />
+                                />-->
                         </LinearLayout>
 
                     </LinearLayout>
@@ -272,14 +323,35 @@
                     android:text="Image"
                     android:textSize="@dimen/item_text_size" />
 
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/image_url_item"
-                    android:layout_marginLeft="20dp"
-                    android:gravity="start"
-                    android:paddingLeft="10dp"
-                    android:text="url"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/item_text_size" />
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/thumbnail_set_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center|left"
+                        android:hint="Thumbnail"
+                        android:inputType="textUri"
+                        android:paddingLeft="18dp"
+                        android:textSize="@dimen/item_text_small_size" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/thumbnail_set_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="0"
+                        android:background="@color/gray_800"
+                        android:text="확정"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/item_text_small_size" />
+                </LinearLayout>
             </TableRow>
 
             <TableRow
@@ -297,7 +369,8 @@
                     android:id="@+id/product_details_item"
                     android:layout_marginLeft="20dp"
                     android:gravity="center"
-                    android:text="상세 설명"
+                    android:hint="상세 설명"
+                    android:inputType="textMultiLine|textCapSentences"
                     android:textColor="@color/black"
                     android:textSize="@dimen/item_text_size" />
             </TableRow>
@@ -310,6 +383,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/add_new_product_btn"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="2dp"
@@ -320,6 +394,7 @@
                 android:textSize="@dimen/item_text_size" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel_btn"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="2dp"
