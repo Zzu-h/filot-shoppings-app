@@ -26,7 +26,6 @@ class ProductManageNetworkDataSource {
     private val _downloadUserListResponse = MutableLiveData<List<User>>()
 
     val networkState: LiveData<NetworkState> get() = _networkState
-    val downloadUserListResponse: LiveData<List<User>> get() = _downloadUserListResponse
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
@@ -37,7 +36,7 @@ class ProductManageNetworkDataSource {
     private val api = retrofit.create(ProductManageInterface::class.java)
 
     fun addNewProduct(token: String, path: String, productInfo: ProductInfo){
-        val callGetList = api.addNewProduct(token = token, params = getHashMapPartBody(path, productInfo))
+        val callGetList = api.addNewProduct(token = token, params = getHashMapPartBody(path, productInfo), file = getImageBody(path,"file"))
         _networkState.postValue(NetworkState.LOADING)
 
         callGetList.enqueue(object: Callback<Unit>{
@@ -56,6 +55,12 @@ class ProductManageNetworkDataSource {
             }
         })
     }
+    private fun getImageBody(path: String, name: String): MultipartBody.Part {
+        val file = File(path)
+        val requestBody: RequestBody = RequestBody.create(MediaType.parse("image/*"), file)
+
+        return MultipartBody.Part.createFormData(name, name, requestBody)
+    }
     private fun getHashMapPartBody(path: String, productInfo: ProductInfo): Map<String, RequestBody> {
         val requestBody: MutableMap<String, RequestBody> = mutableMapOf()
 
@@ -65,8 +70,7 @@ class ProductManageNetworkDataSource {
         requestBody["size"] = RequestBody.create(MediaType.parse("text/plain"), productInfo.size)
         requestBody["description"] = RequestBody.create(MediaType.parse("text/plain"), productInfo.description)
         requestBody["color"] = RequestBody.create(MediaType.parse("text/plain"), productInfo.color)
-        requestBody["categoryName"] = RequestBody.create(MediaType.parse("text/plain"), productInfo.categoryName)
-        requestBody["file"] = RequestBody.create(MediaType.parse("image/*"), File(path))
+        requestBody["categoryName"] = RequestBody.create(MediaType.parse("text/plain"), productInfo.categoryName.lowercase())
 
         return requestBody
     }

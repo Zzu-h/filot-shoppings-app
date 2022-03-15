@@ -8,9 +8,10 @@ import retrofit2.http.*
 
 interface ProductManageInterface {
     @Multipart
-    @POST("/admin/banners")
+    @POST("/admin/products/")
     fun addNewProduct(
         @Header("X-AUTH-TOKEN") token: String,
-        @PartMap params: Map<String,@JvmSuppressWildcards RequestBody>
+        @PartMap params: Map<String,@JvmSuppressWildcards RequestBody>,
+        @Part file: MultipartBody.Part,
     ): Call<Unit>
 }
