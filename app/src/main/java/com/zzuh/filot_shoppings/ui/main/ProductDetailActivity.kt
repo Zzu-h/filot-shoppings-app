@@ -135,7 +135,9 @@ class ProductDetailActivity : AppCompatActivity() {
                         .into(binding.productImg)
                 }
                 colorList = it.colors as MutableList<String>
-                sizeList = it.size.split(",") as MutableList<String>
+                val size = it.size + ","
+                sizeList = size.split(",") as MutableList<String>
+                sizeList.removeLast()
                 spinnerSetting()
                 delay(500)
                 imageListAdapter.updateData(it.images)
