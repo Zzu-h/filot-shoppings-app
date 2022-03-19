@@ -61,4 +61,35 @@ class ImageUploadNetworkDataSource {
 
         return MultipartBody.Part.createFormData(name, name, requestBody)
     }
+
+    fun uploadImageList(token: String, productId: Int, category: String, pathList: List<String> ){
+        val requestBody: MutableMap<String, RequestBody> = mutableMapOf()
+        requestBody["product_id"] = RequestBody.create(MediaType.parse("text/plain"), productId.toString())
+        requestBody["category_name"] = RequestBody.create(MediaType.parse("text/plain"), category)
+
+        val callGetList = api.uploadImageList(token, requestBody, getImageListBody(pathList, productId))
+        _networkState.postValue(NetworkState.LOADING)
+
+        callGetList.enqueue(object: Callback<Unit>{
+            override fun onFailure(call: Call<Unit>, t: Throwable) {
+                _networkState.postValue(NetworkState.ERROR)
+                t.printStackTrace()
+            }
+
+            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                if(response.isSuccessful)
+                    _networkState.postValue(NetworkState.LOADED)
+                else{
+                    _networkState.postValue(NetworkState.ERROR)
+                    Log.d("uploadImageList", "${response.raw()}")
+                }
+            }
+        })
+    }
+
+    private fun getImageListBody(pathList: List<String>, id: Int): List<MultipartBody.Part>{
+        val list = mutableListOf<MultipartBody.Part>()
+        for(i in (0..pathList.size)) list.add(getImageBody(pathList[i], "${id}_${i+1}"))
+        return list
+    }
 }

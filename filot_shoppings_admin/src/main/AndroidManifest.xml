@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zzuh.filot_shoppings_admin">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,14 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Filot_shoppings">
-        <activity android:name=".ui.admin.CategoryManageActivity"
-            android:exported="false"/>
-        <activity android:name=".ui.admin.NewProductActivity"
-            android:exported="false"/>
-        <activity android:name=".ui.admin.ProductManageActivity"
-            android:exported="false"/>
-        <activity android:name=".ui.admin.UserManageActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".ui.admin.CategoryManageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.NewProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.ProductManageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.UserManageActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.admin.AdminActivity"
             android:exported="true">

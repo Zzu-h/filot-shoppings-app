@@ -8,16 +8,19 @@ import androidx.lifecycle.ViewModelProvider
 import com.zzuh.filot_shoppings_admin.data.repository.NetworkState
 import com.zzuh.filot_shoppings_admin.data.repository.ProductManageRepository
 import com.zzuh.filot_shoppings_admin.data.vo.MainCategory
+import com.zzuh.filot_shoppings_admin.data.vo.ProductDetails
 import com.zzuh.filot_shoppings_admin.data.vo.ProductInfo
 
 class NewProductViewModel(private val token: String):ViewModel() {
     private val productManageRepository = ProductManageRepository()
     val categoryNetworkState: LiveData<NetworkState> get() = productManageRepository.categoryNetworkState
     val productManageNetworkState: LiveData<NetworkState> get() = productManageRepository.productManageNetworkState
+    val newProductResponse: LiveData<ProductDetails> get() = productManageRepository.newProductResponse
 
     val categoryList: LiveData<List<MainCategory>> by lazy { productManageRepository.fetchCategoryAllList() }
 
     var thumbnailConfirm = false
+    var productId = -1
 
     var name: String? = null
     var size: String? = null
@@ -62,6 +65,9 @@ class NewProductViewModel(private val token: String):ViewModel() {
 
         return isNull
     }
+
+    fun uploadImage(imagePathList: List<String>)
+        = productManageRepository.uploadImageList(token, productId = productId, categoryName!!, imagePathList)
 }
 
 class NewProductViewModelFactory (private val token: String) : ViewModelProvider.Factory {

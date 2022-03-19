@@ -61,5 +61,6 @@ class LocalImage {
         _path = null
         _name = null
         _isImage = false
+        isReady = false
     }
 }

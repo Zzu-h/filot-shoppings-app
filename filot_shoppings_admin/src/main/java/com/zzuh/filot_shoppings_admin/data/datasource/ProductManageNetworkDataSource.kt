@@ -7,6 +7,7 @@ import com.zzuh.filot_shoppings_admin.data.api.BASE_URL
 import com.zzuh.filot_shoppings_admin.data.api.ImageUploadInterface
 import com.zzuh.filot_shoppings_admin.data.api.ProductManageInterface
 import com.zzuh.filot_shoppings_admin.data.repository.NetworkState
+import com.zzuh.filot_shoppings_admin.data.vo.ProductDetails
 import com.zzuh.filot_shoppings_admin.data.vo.ProductInfo
 import com.zzuh.filot_shoppings_admin.data.vo.User
 import okhttp3.MediaType
@@ -23,9 +24,10 @@ import java.io.File
 class ProductManageNetworkDataSource {
 
     private val _networkState = MutableLiveData<NetworkState>()
-    private val _downloadUserListResponse = MutableLiveData<List<User>>()
+    private val _newProductResponse = MutableLiveData<ProductDetails>()
 
     val networkState: LiveData<NetworkState> get() = _networkState
+    val newProductResponse: LiveData<ProductDetails> get() = _newProductResponse
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
@@ -39,16 +41,18 @@ class ProductManageNetworkDataSource {
         val callGetList = api.addNewProduct(token = token, params = getHashMapPartBody(path, productInfo), file = getImageBody(path,"file"))
         _networkState.postValue(NetworkState.LOADING)
 
-        callGetList.enqueue(object: Callback<Unit>{
-            override fun onFailure(call: Call<Unit>, t: Throwable) {
+        callGetList.enqueue(object: Callback<ProductDetails>{
+            override fun onFailure(call: Call<ProductDetails>, t: Throwable) {
                 _networkState.postValue(NetworkState.ERROR)
                 t.printStackTrace()
             }
 
-            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+            override fun onResponse(call: Call<ProductDetails>, response: Response<ProductDetails>) {
                 Log.d("addNewProduct", "${response.raw()}")
-                if(response.isSuccessful)
+                if(response.isSuccessful) {
                     _networkState.postValue(NetworkState.LOADED)
+                    _newProductResponse.postValue(response.body() as ProductDetails)
+                }
                 else
                     _networkState.postValue(NetworkState.ERROR)
 

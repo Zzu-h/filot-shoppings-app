@@ -9,3 +9,12 @@ data class ProductInfo(
     val color: String,
     val categoryName: String
 )
+
+data class ProductDetails (
+    val id: String,
+    val name: String,
+    val price: Int,
+    val size: String,
+    val amount: Int,
+    val imageUrl: String,
+)
