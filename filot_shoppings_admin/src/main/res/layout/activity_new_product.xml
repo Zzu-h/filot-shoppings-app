@@ -416,15 +416,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
         <ImageView
             android:id="@+id/thumbnail_iv"
-            android:layout_width="70dp"
-            android:layout_height="100dp"
+            android:layout_width="180dp"
+            android:layout_height="250dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:background="@color/gray_500"
-            />
+            android:background="@color/gray_500" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -467,11 +467,12 @@
                     android:id="@+id/product_price_tv"
                     android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:inputType="numberDecimal"
                     android:text="KRW $price"
                     android:textColor="@color/black"
-                    android:inputType="numberDecimal"
                     android:textSize="@dimen/item_text_size" />
             </TableRow>
+
             <TableRow
                 android:layout_marginTop="@dimen/table_top_margin_size"
                 android:paddingLeft="10dp"
@@ -491,6 +492,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/item_text_size" />
             </TableRow>
+
             <TableRow
                 android:layout_marginTop="@dimen/table_top_margin_size"
                 android:paddingLeft="10dp"
@@ -513,14 +515,14 @@
 
             <TableRow
                 android:layout_marginTop="@dimen/table_top_margin_size"
-                android:paddingLeft="10dp"
-                >
+                android:paddingLeft="10dp">
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="SIZE"
                     android:textSize="@dimen/item_text_size" />
+
                 <TextView
                     android:id="@+id/size_item"
                     android:layout_marginLeft="20dp"
@@ -530,7 +532,7 @@
                     android:textSize="@dimen/item_text_size" />
             </TableRow>
 
-           <!-- <TableRow
+            <!-- <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/table_top_margin_size"
@@ -592,11 +594,25 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <include layout="@layout/image_list_item" android:id="@+id/image_list_item_1"/>
-                    <include layout="@layout/image_list_item" android:id="@+id/image_list_item_2"/>
-                    <include layout="@layout/image_list_item" android:id="@+id/image_list_item_3"/>
-                    <include layout="@layout/image_list_item" android:id="@+id/image_list_item_4"/>
-                    <include layout="@layout/image_list_item" android:id="@+id/image_list_item_5"/>
+                    <include
+                        android:id="@+id/image_list_item_1"
+                        layout="@layout/image_list_item" />
+
+                    <include
+                        android:id="@+id/image_list_item_2"
+                        layout="@layout/image_list_item" />
+
+                    <include
+                        android:id="@+id/image_list_item_3"
+                        layout="@layout/image_list_item" />
+
+                    <include
+                        android:id="@+id/image_list_item_4"
+                        layout="@layout/image_list_item" />
+
+                    <include
+                        android:id="@+id/image_list_item_5"
+                        layout="@layout/image_list_item" />
 
                 </LinearLayout>
             </TableRow>

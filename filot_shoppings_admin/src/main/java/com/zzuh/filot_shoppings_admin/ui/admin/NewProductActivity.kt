@@ -124,6 +124,7 @@ class NewProductActivity : AppCompatActivity() {
             binding.amountTv.text = it.amount.toString()
             binding.categoryTv.text = newProductViewModel.categoryName
             binding.sizeListTv.text = it.size
+            binding.productPriceTv.text = "KRW ${it.price}"
         })
     }
     private fun spinnerSetting(){
@@ -175,6 +176,12 @@ class NewProductActivity : AppCompatActivity() {
         binding.imageListItem4.deletePathBtn.setOnClickListener { deleteLocalImage(3) }
         binding.imageListItem5.deletePathBtn.setOnClickListener { deleteLocalImage(4) }
 
+        binding.imageListItem1.imagePathTv.setOnClickListener { getDetailImage_1.launch(localImage.getIntent()) }
+        binding.imageListItem2.imagePathTv.setOnClickListener { getDetailImage_2.launch(localImage.getIntent()) }
+        binding.imageListItem3.imagePathTv.setOnClickListener { getDetailImage_3.launch(localImage.getIntent()) }
+        binding.imageListItem4.imagePathTv.setOnClickListener { getDetailImage_4.launch(localImage.getIntent()) }
+        binding.imageListItem5.imagePathTv.setOnClickListener { getDetailImage_5.launch(localImage.getIntent()) }
+
         binding.newProductUploadBtn.setOnClickListener {
             val list = mutableListOf<String>()
             imagePathList.forEach { it -> if(it.isNotEmpty()) list.add(it) }
@@ -207,7 +214,7 @@ class NewProductActivity : AppCompatActivity() {
 
     }
     private fun deleteLocalImage(index: Int){
-        if (imagePathList.get(index).isEmpty()) return
+        //if (imagePathList.get(index).isEmpty()) return
 
         when(index){
             0 -> binding.imageListItem1.imagePathTv.text = "image"
@@ -226,7 +233,13 @@ class NewProductActivity : AppCompatActivity() {
                 localImage.contentResolver = contentResolver
                 localImage.fetchImage()
 
-                binding.imageListItem1.imagePathTv.text = localImage.fileName
+                when(index){
+                    0 -> binding.imageListItem1.imagePathTv.text = localImage.fileName
+                    1 -> binding.imageListItem2.imagePathTv.text = localImage.fileName
+                    2 -> binding.imageListItem3.imagePathTv.text = localImage.fileName
+                    3 -> binding.imageListItem4.imagePathTv.text = localImage.fileName
+                    4 -> binding.imageListItem5.imagePathTv.text = localImage.fileName
+                }
                 imagePathList[0] = localImage.filePath!!
 
                 localImage.clear()
