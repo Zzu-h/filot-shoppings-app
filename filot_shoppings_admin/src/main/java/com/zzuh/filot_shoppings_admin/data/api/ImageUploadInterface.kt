@@ -13,10 +13,10 @@ interface ImageUploadInterface {
         @Part bannerFile : MultipartBody.Part
         ): Call<Unit>
     @Multipart
-    @POST("/image")
+    @POST("/admin/products/image")
     fun uploadImageList(
         @Header("X-AUTH-TOKEN") token: String,
         @PartMap params: Map<String,@JvmSuppressWildcards RequestBody>,
-        @Part imageList : List<MultipartBody.Part>
+        @Part files : ArrayList<MultipartBody.Part>
     ): Call<Unit>
 }

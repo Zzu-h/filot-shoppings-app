@@ -126,6 +126,24 @@ class NewProductActivity : AppCompatActivity() {
             binding.sizeListTv.text = it.size
             binding.productPriceTv.text = "KRW ${it.price}"
         })
+        newProductViewModel.imageListNetworkState.observe(this, Observer {
+            when(it){
+                NetworkState.LOADING -> {
+                    binding.newProductLayout.isGone = true
+                    binding.loadingProgressBar.isVisible = true
+                    binding.newProductImageLayout.isGone = true
+                }
+                NetworkState.ERROR -> {
+                    binding.newProductLayout.isGone = true
+                    binding.loadingProgressBar.isGone = true
+                    binding.newProductImageLayout.isVisible = true
+                }
+                NetworkState.LOADED -> {
+                    Toast.makeText(this,"성공적으로 업로드를 했습니다!", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+            }
+        })
     }
     private fun spinnerSetting(){
         binding.categoryItem.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
@@ -234,13 +252,27 @@ class NewProductActivity : AppCompatActivity() {
                 localImage.fetchImage()
 
                 when(index){
-                    0 -> binding.imageListItem1.imagePathTv.text = localImage.fileName
-                    1 -> binding.imageListItem2.imagePathTv.text = localImage.fileName
-                    2 -> binding.imageListItem3.imagePathTv.text = localImage.fileName
-                    3 -> binding.imageListItem4.imagePathTv.text = localImage.fileName
-                    4 -> binding.imageListItem5.imagePathTv.text = localImage.fileName
+                    0 -> {
+                        binding.imageListItem1.imagePathTv.text = localImage.fileName
+                        imagePathList[0] = localImage.filePath!!
+                    }
+                    1 -> {
+                        binding.imageListItem2.imagePathTv.text = localImage.fileName
+                        imagePathList[1] = localImage.filePath!!
+                    }
+                    2 -> {
+                        binding.imageListItem3.imagePathTv.text = localImage.fileName
+                        imagePathList[2] = localImage.filePath!!
+                    }
+                    3 -> {
+                        binding.imageListItem4.imagePathTv.text = localImage.fileName
+                        imagePathList[3] = localImage.filePath!!
+                    }
+                    4 -> {
+                        binding.imageListItem5.imagePathTv.text = localImage.fileName
+                        imagePathList[4] = localImage.filePath!!
+                    }
                 }
-                imagePathList[0] = localImage.filePath!!
 
                 localImage.clear()
             }

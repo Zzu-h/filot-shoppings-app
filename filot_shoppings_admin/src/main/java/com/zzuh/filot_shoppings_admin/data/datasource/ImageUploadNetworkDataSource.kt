@@ -55,11 +55,11 @@ class ImageUploadNetworkDataSource {
         })
     }
 
-    private fun getImageBody(path: String, name: String): MultipartBody.Part {
+    private fun getImageBody(path: String, keyName: String, name: String = "bannerFile"): MultipartBody.Part {
         val file = File(path)
         val requestBody: RequestBody = RequestBody.create(MediaType.parse("image/*"), file)
 
-        return MultipartBody.Part.createFormData(name, name, requestBody)
+        return MultipartBody.Part.createFormData(keyName, name, requestBody)
     }
 
     fun uploadImageList(token: String, productId: Int, category: String, pathList: List<String> ){
@@ -87,9 +87,10 @@ class ImageUploadNetworkDataSource {
         })
     }
 
-    private fun getImageListBody(pathList: List<String>, id: Int): List<MultipartBody.Part>{
-        val list = mutableListOf<MultipartBody.Part>()
-        for(i in (0..pathList.size)) list.add(getImageBody(pathList[i], "${id}_${i+1}"))
+    private fun getImageListBody(pathList: List<String>, id: Int): ArrayList<MultipartBody.Part>{
+        val list = ArrayList<MultipartBody.Part>()
+        for(i in (0..pathList.lastIndex))
+            list.add(getImageBody(pathList[i], "files","${id}_${i + 1}"))
         return list
     }
 }
