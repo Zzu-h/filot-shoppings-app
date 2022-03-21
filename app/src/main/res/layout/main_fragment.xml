@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:nestedScrollingEnabled="true"
+        >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,6 +34,7 @@
             android:id="@+id/loading_bar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:minHeight="400dp"
             android:layout_gravity="center"
             android:visibility="visible"/>
 
@@ -51,7 +59,10 @@
             android:layout_height="match_parent"
             android:scrollbars="vertical"
             android:visibility="gone"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/product_list_item"
             />
     </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
