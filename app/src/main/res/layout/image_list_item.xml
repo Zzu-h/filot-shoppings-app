@@ -3,7 +3,6 @@
     android:id="@+id/description_iv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="200dp"
     android:background="@color/black"
     android:scaleType="fitXY"
     android:adjustViewBounds="true"

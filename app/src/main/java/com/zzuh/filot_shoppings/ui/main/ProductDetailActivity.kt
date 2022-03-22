@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -62,7 +63,7 @@ class ProductDetailActivity : AppCompatActivity() {
         imageListAdapter = ImageListAdapter(emptyList())
 
         binding.selectedListRecyclerView.adapter = selectedListAdapter
-        binding.descriptionImageRv.adapter = imageListAdapter
+        //binding.descriptionImageRv.adapter = imageListAdapter
 
         setContentView(binding.root)
 
@@ -118,9 +119,8 @@ class ProductDetailActivity : AppCompatActivity() {
     private fun viewModelSetting(){
         detailsViewModel.product.observe(this, Observer {
             CoroutineScope(Dispatchers.Main).launch {
-                for(item in it.images)
-                    Glide.with(this@ProductDetailActivity)
-                        .load(item)
+                for(index in 0..it.images.lastIndex)
+                    imageLoad(index, it.images[index])
 
                 binding.itemTitle.text = it.name
                 binding.productPriceItem.text = "KRW ${it.price}"
@@ -140,7 +140,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 sizeList.removeLast()
                 spinnerSetting()
                 delay(500)
-                imageListAdapter.updateData(it.images)
+                /*imageListAdapter.updateData(it.images)*/
                 binding.loadingBar.visibility = View.GONE
                 binding.detailContentLayout.visibility = View.VISIBLE
             }
@@ -180,6 +180,24 @@ class ProductDetailActivity : AppCompatActivity() {
             "autoLogin",
             Activity.MODE_PRIVATE)
             .getString("token", null)
+    }
+    private fun imageLoad(index: Int, url: String){
+        val imageView by lazy {
+            when(index){
+                0 -> return@lazy binding.imageListItem1
+                1 -> return@lazy binding.imageListItem2
+                2 -> return@lazy binding.imageListItem3
+                3 -> return@lazy binding.imageListItem4
+                4 -> return@lazy binding.imageListItem5
+                else -> return@lazy binding.imageListItem1
+            }
+        }
+        Glide.with(this)
+            .load(url)
+            .fitCenter()
+            .override(Target.SIZE_ORIGINAL)
+            .into(imageView.descriptionIv)
+        imageView.root.visibility = View.VISIBLE
     }
 }
 
