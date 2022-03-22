@@ -37,21 +37,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="T. XXXX-XXXX"
+                android:text="@string/customer_tel_number"
                 android:textSize="12dp"
                 android:layout_marginBottom="7dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MON TO FRI AM 11:00 - PM 05:00"
+                android:text="@string/service_time"
                 android:textSize="10dp"
                 android:layout_marginBottom="5dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LUNCH PM 12:00 - PM 01:00"
+                android:text="@string/break_time"
                 android:textSize="10dp"
                 android:layout_marginBottom="5dp"
                 />
@@ -62,14 +62,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SAT.SUN.HOLIDAY "
+                android:text="@string/break_day"
                 android:textSize="10dp"
                 android:layout_marginBottom="5dp"
                 />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OFF"
+                    android:text=" OFF"
                     android:textSize="10dp"
                     android:layout_marginBottom="5dp"
                     android:textColor="#e74c3c"
@@ -101,28 +101,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="국민 XXXXXX-XX-XXXXXXX"
+                android:text="@string/first_bank_account"
                 android:textSize="10dp"
                 android:layout_marginBottom="5dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="리 XXXXXX-XX-XXXXXXX"
+                android:text="@string/second_bank_account"
                 android:textSize="10dp"
                 android:layout_marginBottom="5dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="하 XXXXXX-XX-XXXXXXX"
+                android:text="@string/thrid_bank_account"
                 android:textSize="10dp"
                 android:layout_marginBottom="7dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이주호"
+                android:text="@string/bank_owner_name"
                 android:textSize="11dp"
                 android:layout_marginBottom="5dp"
                 />

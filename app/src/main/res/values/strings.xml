@@ -1,4 +1,5 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ExtraTranslation">
     <string name="app_name">filot_shoppings</string>
     <string name="copyright">COPYRIGHT (C) ALL RIGHTS RESERVED. DESIGN BY FILOT V2.0.</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -12,4 +13,14 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="customer_tel_number">T. XXXX-XXXX</string>
+    <string name="service_time">MON TO FRI AM 11:00 - PM 05:00</string>
+    <string name="break_time">LUNCH PM 12:00 - PM 01:00</string>
+    <string name="break_day">SAT.SUN.HOLIDAY</string>
+
+    <string name="first_bank_account">국민 XXXXXX-XX-XXXXXXX</string>
+    <string name="second_bank_account">우리 XXXXXX-XX-XXXXXXX</string>
+    <string name="thrid_bank_account">하나 XXXXXX-XX-XXXXXXX</string>
+    <string name="bank_owner_name">이주호</string>
 </resources>
