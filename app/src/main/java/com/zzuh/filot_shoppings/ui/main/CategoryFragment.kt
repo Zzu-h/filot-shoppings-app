@@ -1,6 +1,7 @@
 package com.zzuh.filot_shoppings.ui.main
 
 import android.graphics.drawable.GradientDrawable
+import android.location.GnssAntennaInfo
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -44,45 +45,15 @@ class CategoryFragment(
         binding.productListRecyclerView.layoutManager = gridLayout
         binding.productListRecyclerView.adapter = adapter
 
-        productListViewModel.productList.observe(this, Observer{
-            if(it == null || it.products.isEmpty())
-                return@Observer
-
-            adapter.updateData(it.products)
-            adapter.notifyDataSetChanged()
-        })
-        productListViewModel.categoryName.observe(this, Observer {
-            binding.categoryTitleTextView.text = it
-            productListViewModel.getProductList(it)
-            categoryViewModel.getSubCategoryList(it)
-        })
-        categoryViewModel.subCategoryList.observe(this, Observer {
-            subCategoryList = it
-            binding.subTabLayout.removeAllTabs()
-            subTabList.clear()
-            for(item in subCategoryList){
-                subTabList.add(binding.subTabLayout.newTab())
-                subTabList.last().text = item.name
-                binding.subTabLayout.addTab(subTabList.last())
+        viewModelSetting()
+        binding.subTabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                if(!categoryViewModel.isMainCategory)
+                    tab?.apply { productListViewModel.categoryName.postValue(tab.text as String) }
+                else categoryViewModel.isMainCategory = false
             }
-            val root: View = binding.subTabLayout.getChildAt(0)
-            if (root is LinearLayout) {
-                (root as LinearLayout).showDividers = LinearLayout.SHOW_DIVIDER_MIDDLE
-                val drawable = GradientDrawable()
-                drawable.setColor(resources.getColor(R.color.grey))
-                drawable.setSize(1, 1)
-                (root as LinearLayout).dividerPadding = 3
-                (root as LinearLayout).dividerDrawable = drawable
-            }
-        })
-
-        productListViewModel.networkState.observe(this, Observer {
-            if(it == NetworkState.ERROR || it == NetworkState.LOADING) viewControl(it)
-            else if(categoryViewModel.subCategoryNetworkState.value == NetworkState.LOADED) viewControl(it)
-        })
-        categoryViewModel.subCategoryNetworkState.observe(this, Observer {
-            if(it == NetworkState.ERROR || it == NetworkState.LOADING) viewControl(it)
-            else if(productListViewModel.networkState.value == NetworkState.LOADED) viewControl(it)
+            override fun onTabUnselected(tab: TabLayout.Tab?) { }
+            override fun onTabReselected(tab: TabLayout.Tab?) { }
         })
     }
     private fun viewControl(it: NetworkState){
@@ -118,5 +89,48 @@ class CategoryFragment(
                 binding.txtError.visibility = View.VISIBLE
             }
         }
+    }
+    private fun viewModelSetting(){
+        productListViewModel.productList.observe(this, Observer{
+            if(it == null || it.products.isEmpty())
+                return@Observer
+
+            adapter.updateData(it.products)
+            adapter.notifyDataSetChanged()
+        })
+        productListViewModel.categoryName.observe(this, Observer {
+            binding.categoryTitleTextView.text = it
+            productListViewModel.getProductList(it)
+            if(categoryViewModel.isMainCategory)
+                categoryViewModel.getSubCategoryList(it)
+        })
+        categoryViewModel.subCategoryList.observe(this, Observer {
+            subCategoryList = it
+            binding.subTabLayout.removeAllTabs()
+            subTabList.clear()
+            for(item in subCategoryList){
+                subTabList.add(binding.subTabLayout.newTab())
+                subTabList.last().text = item.name
+                binding.subTabLayout.addTab(subTabList.last())
+            }
+            val root: View = binding.subTabLayout.getChildAt(0)
+            if (root is LinearLayout) {
+                (root as LinearLayout).showDividers = LinearLayout.SHOW_DIVIDER_MIDDLE
+                val drawable = GradientDrawable()
+                drawable.setColor(resources.getColor(R.color.grey))
+                drawable.setSize(1, 1)
+                (root as LinearLayout).dividerPadding = 3
+                (root as LinearLayout).dividerDrawable = drawable
+            }
+        })
+
+        productListViewModel.networkState.observe(this, Observer {
+            if(it == NetworkState.ERROR || it == NetworkState.LOADING) viewControl(it)
+            else if(categoryViewModel.subCategoryNetworkState.value == NetworkState.LOADED) viewControl(it)
+        })
+        categoryViewModel.subCategoryNetworkState.observe(this, Observer {
+            if(it == NetworkState.ERROR || it == NetworkState.LOADING) viewControl(it)
+            else if(productListViewModel.networkState.value == NetworkState.LOADED) viewControl(it)
+        })
     }
 }

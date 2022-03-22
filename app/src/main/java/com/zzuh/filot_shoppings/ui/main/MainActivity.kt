@@ -192,6 +192,7 @@ class MainActivity : AppCompatActivity() {
         binding.mainTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab?.let{ changeFragment(false, tab.text as String) }
+                categoryViewModel.isMainCategory = true
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {

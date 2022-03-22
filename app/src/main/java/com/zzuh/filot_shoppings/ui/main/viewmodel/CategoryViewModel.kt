@@ -20,6 +20,8 @@ class CategoryViewModel(lifecycleOwner: LifecycleOwner):ViewModel() {
     var isMain: Boolean? get() = _isMain.value
         set(value: Boolean?) {_isMain.postValue(value)}
 
+    var isMainCategory = true
+
     init {
         mainCategoryRepository.mainCategoryList.observe(lifecycleOwner, Observer { mainCategoryList.postValue(it) })
         mainCategoryRepository.networkState.observe(lifecycleOwner, Observer { mainCategoryNetworkState.postValue(it) })
