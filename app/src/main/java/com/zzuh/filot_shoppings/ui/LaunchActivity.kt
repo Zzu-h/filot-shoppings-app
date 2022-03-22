@@ -9,7 +9,6 @@ import com.zzuh.filot_shoppings.R
 import com.zzuh.filot_shoppings.data.api.BASE_URL
 import com.zzuh.filot_shoppings.data.vo.UserInfo
 import com.zzuh.filot_shoppings.ui.main.MainActivity
-import com.zzuh.filot_shoppings_admin.data.repository.NetworkState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

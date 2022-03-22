@@ -3,9 +3,9 @@ package com.zzuh.filot_shoppings_admin.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.zzuh.filot_shoppings_admin.databinding.ImageListItemBinding
+import com.zzuh.filot_shoppings_admin.databinding.NewProductImageListItemBinding
 
-class DetailImageViewHolder(val binding: ImageListItemBinding): RecyclerView.ViewHolder(binding.root)
+class DetailImageViewHolder(val binding: NewProductImageListItemBinding): RecyclerView.ViewHolder(binding.root)
 
 class DetailImageAdapter(var itemList: MutableList<String>): RecyclerView.Adapter<DetailImageViewHolder>() {
     override fun getItemCount(): Int = itemList.size
@@ -19,7 +19,7 @@ class DetailImageAdapter(var itemList: MutableList<String>): RecyclerView.Adapte
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailImageViewHolder
             = DetailImageViewHolder(
-        ImageListItemBinding.inflate(
+        NewProductImageListItemBinding.inflate(
             LayoutInflater.from(parent.context)
             , parent,
             false)

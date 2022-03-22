@@ -596,23 +596,23 @@
 
                     <include
                         android:id="@+id/image_list_item_1"
-                        layout="@layout/image_list_item" />
+                        layout="@layout/new_product_image_list_item" />
 
                     <include
                         android:id="@+id/image_list_item_2"
-                        layout="@layout/image_list_item" />
+                        layout="@layout/new_product_image_list_item" />
 
                     <include
                         android:id="@+id/image_list_item_3"
-                        layout="@layout/image_list_item" />
+                        layout="@layout/new_product_image_list_item" />
 
                     <include
                         android:id="@+id/image_list_item_4"
-                        layout="@layout/image_list_item" />
+                        layout="@layout/new_product_image_list_item" />
 
                     <include
                         android:id="@+id/image_list_item_5"
-                        layout="@layout/image_list_item" />
+                        layout="@layout/new_product_image_list_item" />
 
                 </LinearLayout>
             </TableRow>
