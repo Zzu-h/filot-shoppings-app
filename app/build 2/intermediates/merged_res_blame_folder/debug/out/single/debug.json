@@ -1,0 +1,590 @@
+[
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_add_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_add_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_baseline_person_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/baseline_person_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_remove_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_remove_circle_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_list_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_list_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_remove_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_remove_circle_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_baseline_person_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/baseline_person_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_add_box_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_add_box_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_vpn_key_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_vpn_key_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_popup_background.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/popup_background.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_shopping_cart_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_shopping_cart_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_baseline_keyboard_backspace_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/baseline_keyboard_backspace_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_add_box_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_add_box_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_drawer_layout.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/drawer_layout.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_activity_product_detail.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/activity_product_detail.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_baseline_search_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/baseline_search_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_drawer_category_list_item.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/drawer_category_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_shopping_cart_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_shopping_cart_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_baseline_search_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/baseline_search_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_fragment_category.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/fragment_category.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_baseline_keyboard_backspace_black_36.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/baseline_keyboard_backspace_black_36.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_check_box_outline_blank_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_check_box_outline_blank_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_baseline_search_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/baseline_search_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_shopping_cart_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_shopping_cart_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_add_box_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_add_box_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_baseline_person_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/baseline_person_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_product_list_item.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/product_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_list_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_list_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_list_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_list_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_remove_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_remove_circle_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_main_fragment.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/main_fragment.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_baseline_person_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/baseline_person_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_check_box_outline_blank_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_check_box_outline_blank_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_check_box_outline_blank_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_check_box_outline_blank_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-v24_logo.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-v24/logo.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_shopping_cart_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_shopping_cart_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_activity_launch.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/activity_launch.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_vpn_key_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_vpn_key_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_add_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_add_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_add_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_add_circle_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_check_box_outline_blank_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_check_box_outline_blank_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_add_box_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_add_box_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_baseline_search_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/baseline_search_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_outline_list_24.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/outline_list_24.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_layout_bottom_shadow.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/layout_bottom_shadow.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_add_box_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_add_box_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_outline_add_circle_outline_24.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/outline_add_circle_outline_24.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_check_box_outline_blank_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_check_box_outline_blank_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_remove_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_remove_circle_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_fragment_cart.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/fragment_cart.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_list_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_list_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_table_row_bottom_border.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/table_row_bottom_border.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_baseline_person_outline_24.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/baseline_person_outline_24.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_dark_color_button.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/dark_color_button.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_baseline_search_20.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/baseline_search_20.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_baseline_person_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/baseline_person_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_shopping_cart_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_shopping_cart_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_add_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_add_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_baseline_search_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/baseline_search_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_baseline_keyboard_backspace_black_36.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/baseline_keyboard_backspace_black_36.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_cart_list_item.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/cart_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_spinner_dropdown_item.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_baseline_search_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/baseline_search_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_list_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_list_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_vpn_key_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_vpn_key_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_baseline_keyboard_backspace_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/baseline_keyboard_backspace_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_logo.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/logo.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_add_box_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_add_box_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_check_box_outline_blank_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_check_box_outline_blank_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_baseline_person_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/baseline_person_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_vpn_key_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_vpn_key_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_add_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_add_circle_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_baseline_keyboard_backspace_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/baseline_keyboard_backspace_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_baseline_keyboard_backspace_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/baseline_keyboard_backspace_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_vpn_key_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_vpn_key_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_shopping_cart_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_shopping_cart_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_baseline_keyboard_backspace_black_36.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/baseline_keyboard_backspace_black_36.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_baseline_keyboard_backspace_black_36.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/baseline_keyboard_backspace_black_36.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_footer.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/footer.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_list_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_list_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_remove_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_remove_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_outline_add_box_24.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/outline_add_box_24.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_baseline_person_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/baseline_person_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_temp_layout.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/temp_layout.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_remove_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_remove_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_vpn_key_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_vpn_key_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_add_box_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_add_box_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_list_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_list_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_list_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_list_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_add_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_add_circle_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_outline_remove_circle_outline_24.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/outline_remove_circle_outline_24.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_vpn_key_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_vpn_key_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_remove_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_remove_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_add_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_add_circle_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_remove_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_remove_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_baseline_keyboard_backspace_black_36.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/baseline_keyboard_backspace_black_36.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_shopping_cart_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_shopping_cart_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_baseline_search_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/baseline_search_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_add_box_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_add_box_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_vpn_key_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_vpn_key_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_baseline_search_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/baseline_search_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-hdpi_outline_check_box_outline_blank_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-hdpi/outline_check_box_outline_blank_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_shopping_cart_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_shopping_cart_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_add_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_add_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_selected_list_item.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/selected_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_add_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_add_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/layout_image_list_item.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/image_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_vpn_key_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_vpn_key_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_shopping_cart_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_shopping_cart_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_check_box_outline_blank_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_check_box_outline_blank_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_list_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_list_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_add_box_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_add_box_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_baseline_person_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/baseline_person_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_baseline_search_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/baseline_search_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_add_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_add_circle_outline_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_baseline_person_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/baseline_person_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_check_box_outline_blank_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_check_box_outline_blank_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_list_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_list_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_baseline_person_outline_18.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/baseline_person_outline_18.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_outline_vpn_key_24.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/outline_vpn_key_24.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_outline_vpn_key_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/outline_vpn_key_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_outline_check_box_outline_blank_24.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/outline_check_box_outline_blank_24.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_add_box_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_add_box_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_baseline_keyboard_backspace_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/baseline_keyboard_backspace_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_table_cell_side_border.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/table_cell_side_border.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/menu_menu_header.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/menu/menu_header.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_outline_check_box_outline_blank_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxxhdpi/outline_check_box_outline_blank_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xhdpi_baseline_person_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xhdpi/baseline_person_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_baseline_search_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/baseline_search_black_24.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_remove_circle_outline_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_remove_circle_outline_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable_baseline_search_24.xml.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable/baseline_search_24.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-mdpi_outline_shopping_cart_black_20.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-mdpi/outline_shopping_cart_black_20.png"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/merged_res/debug/drawable-xxhdpi_outline_remove_circle_outline_black_24.png.flat",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/drawable-xxhdpi/outline_remove_circle_outline_black_24.png"
+    }
+]

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="background_gray">#5F7F7F7F</color>
+    <color name="black">#FF000000</color>
+    <color name="gray_200">#FFE0E0E0</color>
+    <color name="gray_500">#FFA6A6A6</color>
+    <color name="gray_800">#FF5E5E5E</color>
+    <color name="grey">#FFEFEFEF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="admin_margin_size">35dp</dimen>
+    <dimen name="admin_page_title_size">20dp</dimen>
+    <dimen name="admin_text_size">18dp</dimen>
+    <dimen name="drawer_margin_size">25dp</dimen>
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_vertical_margin">16dp</dimen>
+    <dimen name="item_text_large_size">14dp</dimen>
+    <dimen name="item_text_size">12dp</dimen>
+    <dimen name="item_text_small_size">10dp</dimen>
+    <dimen name="page_title_size">16dp</dimen>
+    <dimen name="table_cell_size">14dp</dimen>
+    <dimen name="table_top_margin_size">0dp</dimen>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="app_name">filot_shoppings</string>
+    <string name="copyright">COPYRIGHT (C) ALL RIGHTS RESERVED. DESIGN BY FILOT V2.0.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="welcome">"Welcome!"</string>
+    <style name="Theme.Filot_shoppings" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/gray_200</item>
+        <item name="colorPrimaryVariant">@color/gray_500</item>
+        <item name="colorOnPrimary">@color/gray_800</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/purple_200</item>
+        <item name="colorSecondaryVariant">@color/purple_500</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="tab_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">10dp</item>
+    </style>
+</resources>

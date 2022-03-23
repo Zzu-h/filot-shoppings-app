@@ -6,9 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import com.zzuh.filot_shoppings_admin.data.api.BASE_URL
 import com.zzuh.filot_shoppings_admin.data.api.CategoryInterface
 import com.zzuh.filot_shoppings_admin.data.repository.NetworkState
-import com.zzuh.filot_shoppings_admin.data.vo.Category
 import com.zzuh.filot_shoppings_admin.data.vo.MainCategory
-import com.zzuh.filot_shoppings_admin.data.vo.NewCategory
+import com.zzuh.filot_shoppings_admin.data.vo.NewMainCategory
+import com.zzuh.filot_shoppings_admin.data.vo.NewSubCategory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,7 +50,25 @@ class CategoryNetworkDataSource {
         })
     }
     fun addSubCategory(token: String, parent: String, child: String){
-        val callGetList = api.addSubCategory(token, NewCategory(parent, child))
+        val callGetList = api.addSubCategory(token, NewSubCategory(parent, child))
+        _networkState.postValue(NetworkState.LOADING)
+
+        callGetList.enqueue(object :Callback<MainCategory>{
+            override fun onFailure(call: Call<MainCategory>, t: Throwable) {
+                Log.d("addSubCategory-error", t.printStackTrace().toString())
+                t.printStackTrace()
+                _networkState.postValue(NetworkState.ERROR)
+            }
+
+            override fun onResponse(call: Call<MainCategory>, response: Response<MainCategory>) {
+                if(response.isSuccessful) _networkState.postValue(NetworkState.LOADED)
+                else _networkState.postValue(NetworkState.ERROR)
+                Log.d("addSubCategory", response.raw().toString())
+            }
+        })
+    }
+    fun addMainCategory(token: String, child: String){
+        val callGetList = api.addMainCategory(token, NewMainCategory(child))
         _networkState.postValue(NetworkState.LOADING)
 
         callGetList.enqueue(object :Callback<MainCategory>{

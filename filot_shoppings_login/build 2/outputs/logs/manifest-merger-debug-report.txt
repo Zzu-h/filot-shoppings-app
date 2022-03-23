@@ -1,0 +1,61 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:3:5-45
+		INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+		INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:4:5-66
+	android:name
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:4:22-64
+application
+ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:6:5-22:19
+	android:supportsRtl
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:11:9-35
+	android:label
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:9:9-41
+	android:roundIcon
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:10:9-54
+	android:icon
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:8:9-43
+	android:allowBackup
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:7:9-35
+	android:theme
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:12:9-53
+activity#com.zzuh.filot_shoppings_login.ui.login.LoginActivity
+ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:13:9-15:38
+	android:exported
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:15:13-36
+	android:name
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:14:13-51
+activity#com.zzuh.filot_shoppings_login.ui.login.JoinActivity
+ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:16:9-18:39
+	android:exported
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:17:13-50
+activity#com.zzuh.filot_shoppings_login.ui.login.FindUserActivity
+ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:19:9-21:39
+	android:exported
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml:20:13-54
+uses-sdk
+INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+		INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+		ADDED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml
+		INJECTED from /Users/juho/Desktop/github/filot-shoppings-app/filot_shoppings_login/src/main/AndroidManifest.xml

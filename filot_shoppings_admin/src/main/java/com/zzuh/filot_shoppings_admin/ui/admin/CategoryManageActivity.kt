@@ -11,7 +11,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zzuh.filot_shoppings_admin.data.repository.NetworkState
-import com.zzuh.filot_shoppings_admin.data.vo.Category
 import com.zzuh.filot_shoppings_admin.data.vo.MainCategory
 import com.zzuh.filot_shoppings_admin.databinding.ActivityCategoryManageBinding
 import com.zzuh.filot_shoppings_admin.ui.adapter.MainCategoryAdapter
@@ -39,7 +38,7 @@ class CategoryManageActivity : AppCompatActivity() {
         binding.addMainCategoryBtn.setOnClickListener {
             val mainCategory = binding.newMainCategoryEt.text.toString()
             if(mainCategory == "") return@setOnClickListener
-            categoryManageViewModel.addSubCategory("main", mainCategory)
+            categoryManageViewModel.addCategory("main", mainCategory)
             mainCategoryAdapter.updateData(categoryManageViewModel.categoryList.value as List<MainCategory> + MainCategory(-1, mainCategory, emptyList()))
             mainCategoryAdapter.notifyDataSetChanged()
         }

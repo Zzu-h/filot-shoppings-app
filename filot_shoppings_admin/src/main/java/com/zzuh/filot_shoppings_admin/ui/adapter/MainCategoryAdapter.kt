@@ -1,7 +1,6 @@
 package com.zzuh.filot_shoppings_admin.ui.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,7 +37,7 @@ class MainCategoryAdapter(private val viewModel: CategoryManageViewModel,private
         binding.addSubCategoryBtn.setOnClickListener {
             val subCategory = binding.newSubCategoryEt.text.toString()
             if(subCategory == "") return@setOnClickListener
-            viewModel.addSubCategory(item.name, subCategory)
+            viewModel.addCategory(item.name, subCategory)
             holder.bind(item.children + Category(-1, subCategory))
         }
     }

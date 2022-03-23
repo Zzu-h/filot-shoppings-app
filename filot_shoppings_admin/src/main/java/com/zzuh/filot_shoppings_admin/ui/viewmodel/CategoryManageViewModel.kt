@@ -12,7 +12,7 @@ class CategoryManageViewModel(private val token: String):ViewModel() {
     val networkState: LiveData<NetworkState> get() = repository.networkState
     val categoryList: LiveData<List<MainCategory>> by lazy { repository.fetchCategoryAllList() }
 
-    fun addSubCategory(parent: String, child: String): Unit = repository.addSubCategory(token, parent, child)
+    fun addCategory(parent: String, child: String): Unit = repository.addCategory(token, parent, child)
 }
 
 class CategoryManageViewModelFactory (private val token: String) : ViewModelProvider.Factory {

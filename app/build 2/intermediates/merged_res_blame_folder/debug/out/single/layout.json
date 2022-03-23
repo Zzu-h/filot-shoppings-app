@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_cart.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/fragment_cart.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/drawer_layout.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/drawer_layout.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/product_list_item.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/product_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/main_fragment.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/main_fragment.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/footer.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/footer.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/cart_list_item.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/cart_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/selected_list_item.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/selected_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/image_list_item.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/image_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_product_detail.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/activity_product_detail.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_category.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/fragment_category.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_launch.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/activity_launch.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/drawer_category_list_item.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/drawer_category_list_item.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/temp_layout.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/temp_layout.xml"
+    },
+    {
+        "merged": "/Users/juho/Desktop/github/filot-shoppings-app/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/spinner_dropdown_item.xml",
+        "source": "/Users/juho/Desktop/github/filot-shoppings-app/app/src/main/res/layout/spinner_dropdown_item.xml"
+    }
+]
