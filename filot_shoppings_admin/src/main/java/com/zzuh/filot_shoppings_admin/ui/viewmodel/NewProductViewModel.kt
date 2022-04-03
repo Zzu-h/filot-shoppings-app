@@ -15,7 +15,7 @@ class NewProductViewModel(private val token: String):ViewModel() {
     private val productManageRepository = ProductManageRepository()
     val categoryNetworkState: LiveData<NetworkState> get() = productManageRepository.categoryNetworkState
     val productManageNetworkState: LiveData<NetworkState> get() = productManageRepository.productManageNetworkState
-    val newProductResponse: LiveData<ProductDetails> get() = productManageRepository.newProductResponse
+    val newProductResponse: LiveData<ProductDetails> get() = productManageRepository.downloadProductResponse
     val imageListNetworkState: LiveData<NetworkState> get() = productManageRepository.imageUploadNetworkState
 
     val categoryList: LiveData<List<MainCategory>> by lazy { productManageRepository.fetchCategoryAllList() }

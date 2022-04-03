@@ -16,5 +16,9 @@ data class ProductDetails (
     val price: Int,
     val size: String,
     val amount: Int,
-    val imageUrl: String,
+    val imageUrl: String?,
+    val description: String?,
+    val deliveryPrice: Int?,
+    val images: MutableList<String>?,
+    val colors: List<String>?
 )

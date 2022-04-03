@@ -1,5 +1,6 @@
 package com.zzuh.filot_shoppings_admin.data.api
 
+import com.zzuh.filot_shoppings_admin.data.vo.Product
 import com.zzuh.filot_shoppings_admin.data.vo.ProductDetails
 import com.zzuh.filot_shoppings_admin.data.vo.ProductInfo
 import okhttp3.MultipartBody
@@ -14,5 +15,13 @@ interface ProductManageInterface {
         @Header("X-AUTH-TOKEN") token: String,
         @PartMap params: Map<String,@JvmSuppressWildcards RequestBody>,
         @Part file: MultipartBody.Part,
+    ): Call<ProductDetails>
+
+    @GET("/products/main/")
+    fun getAllProducts(): Call<List<Product>>
+
+    @GET("/product/{id}")
+    fun getProductDetails(
+        @Path("id") id: Int
     ): Call<ProductDetails>
 }

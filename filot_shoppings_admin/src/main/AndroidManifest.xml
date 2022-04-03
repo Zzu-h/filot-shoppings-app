@@ -23,6 +23,9 @@
             android:name=".ui.admin.ProductManageActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.admin.UpdateProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.admin.UserManageActivity"
             android:exported="false" />
         <activity

@@ -42,10 +42,19 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <ProgressBar
+        android:id="@+id/loading_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
     <LinearLayout
+        android:id="@+id/content_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:visibility="visible"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,51 +102,44 @@
                     tools:ignore="UseAppTint" />
             </LinearLayout>
         </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <TableLayout
             android:id="@+id/manage_table"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:stretchColumns="0,1,2"
+            android:stretchColumns="1,2,3"
             >
             <TableRow
                 android:minHeight="40dp"
                 android:gravity="center"
                 android:background="@drawable/table_row_bottom_border"
                 >
-                <CheckBox
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    />
+                <CheckBox android:visibility="invisible"/>
+
                 <TextView
-                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="name"
+                    android:background="@drawable/table_cell_side_border"
                     android:gravity="center"
-                    android:layout_weight="5"
-                    android:textSize="@dimen/table_cell_size"
-                    />
+                    android:text="name"
+                    android:textSize="@dimen/table_cell_size" />
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:text="price"
                     android:textSize="@dimen/table_cell_size"
                     android:gravity="center"
-                    android:layout_weight="3"
                     android:background="@drawable/table_cell_side_border"
                     />
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:text="id"
                     android:textSize="@dimen/table_cell_size"
                     android:gravity="center"
-                    android:layout_weight="2"
                     />
             </TableRow>
         </TableLayout>
+        </ScrollView>
         <TextView
             android:id="@+id/no_data_tv"
             android:layout_width="match_parent"
@@ -166,7 +168,7 @@
                 android:textColor="@color/black"
                 android:text="총 상품 수"/>
             <TextView
-                android:id="@+id/user_cnt_tv"
+                android:id="@+id/product_cnt_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/admin_text_size"
