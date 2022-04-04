@@ -193,6 +193,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/selected_list_item"
+                        tools:itemCount="3"
                         />
                     <View
                         android:layout_width="match_parent"
@@ -301,14 +303,50 @@
                 <include layout="@layout/image_list_item" android:id="@+id/image_list_item_5"
                     android:visibility="gone"/>
 
-               <!-- <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/description_image_rv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />-->
-
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REVIEW"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/gray_800"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_200"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/review_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/review_list_item" />
+
+            <TextView
+                android:id="@+id/no_review_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="리뷰가 없습니다!"
+                android:gravity="center"
+                android:padding="30dp"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/add_review_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="리뷰 작성하기 ▼ (+ 200 Point!)"/>
+
             <include layout="@layout/footer"/>
         </LinearLayout>
     </ScrollView>

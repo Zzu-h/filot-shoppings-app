@@ -1,17 +1,16 @@
 package com.zzuh.filot_shoppings.ui.main
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.Toast
+import android.view.*
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -19,20 +18,22 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.Target
 import com.zzuh.filot_shoppings.R
 import com.zzuh.filot_shoppings.data.repository.NetworkState
-import com.zzuh.filot_shoppings.data.vo.Product
+import com.zzuh.filot_shoppings.data.vo.ReviewData
 import com.zzuh.filot_shoppings.data.vo.SelectedProductItem
 import com.zzuh.filot_shoppings.data.vo.SelectedProductList
 import com.zzuh.filot_shoppings.databinding.ActivityProductDetailBinding
 import com.zzuh.filot_shoppings.databinding.ImageListItemBinding
+import com.zzuh.filot_shoppings.ui.main.adapter.ReviewListAdapter
 import com.zzuh.filot_shoppings.ui.main.adapter.SelectedListAdapter
-import com.zzuh.filot_shoppings.ui.main.viewmodel.CartViewModel
-import com.zzuh.filot_shoppings.ui.main.viewmodel.CartViewModelFactory
 import com.zzuh.filot_shoppings.ui.main.viewmodel.DetailsViewModel
 import com.zzuh.filot_shoppings.ui.main.viewmodel.DetailsViewModelFactory
+import com.zzuh.filot_shoppings.ui.review.NewReviewActivity
+import com.zzuh.filot_shoppings.ui.review.UpdateReviewActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+
 
 class ProductDetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityProductDetailBinding
@@ -40,6 +41,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
     lateinit var selectedListAdapter: SelectedListAdapter
     lateinit var imageListAdapter: ImageListAdapter
+    lateinit var reviewListAdapter: ReviewListAdapter
 
     lateinit var sizeList: MutableList<String>
     lateinit var colorList: MutableList<String>
@@ -53,6 +55,7 @@ class ProductDetailActivity : AppCompatActivity() {
     val thumbnail: String? by lazy{
         intent.getStringExtra("thumbnail")
     }
+    val email: String? by lazy { getSharedPreferences("autoLogin", Activity.MODE_PRIVATE).getString("email", null) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,9 +64,10 @@ class ProductDetailActivity : AppCompatActivity() {
             .get(DetailsViewModel::class.java)
         selectedListAdapter = SelectedListAdapter(detailsViewModel, emptyList())
         imageListAdapter = ImageListAdapter(emptyList())
+        reviewListAdapter = ReviewListAdapter(emptyList(), this)
 
         binding.selectedListRecyclerView.adapter = selectedListAdapter
-        //binding.descriptionImageRv.adapter = imageListAdapter
+        binding.reviewRv.adapter = reviewListAdapter
 
         setContentView(binding.root)
 
@@ -151,6 +155,35 @@ class ProductDetailActivity : AppCompatActivity() {
             Log.d("Total Price", "$it")
             binding.totPriceTv.text = "KRW $it"
         })
+
+        detailsViewModel.reviewList.observe(this, Observer {
+            if(it.isEmpty()){
+                binding.reviewRv.isGone = true
+                binding.noReviewTv.isVisible = true
+            }
+            else{
+                binding.reviewRv.isVisible = true
+                binding.noReviewTv.isGone = true
+                reviewListAdapter.updateData(it)
+            }
+        })
+        detailsViewModel.reviewNetworkState.observe(this, Observer {
+            when(it){
+                NetworkState.LOADING -> {
+                    binding.loadingBar.isVisible = true
+                    binding.detailContentLayout.isGone = true
+                }
+                NetworkState.LOADED -> {
+                    Toast.makeText(this,"성공적으로 삭제했습니다!",Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+                NetworkState.ERROR -> {
+                    Toast.makeText(this,"문제가 발생했습니다!",Toast.LENGTH_SHORT).show()
+                    binding.loadingBar.isGone = true
+                    binding.detailContentLayout.isVisible = true
+                }
+            }
+        })
     }
     private fun buttonSetting(){
         binding.backBtn.setOnClickListener { finish() }
@@ -173,6 +206,19 @@ class ProductDetailActivity : AppCompatActivity() {
                     NetworkState.ERROR -> Toast.makeText(this,"상품 물량 부족 또는 네트워크 상태 이상!",Toast.LENGTH_SHORT).show()
                 }
             })
+        }
+        binding.addReviewBtn.setOnClickListener{
+            val token = checkLogined()
+            if(token == null){
+                Toast.makeText(this,"로그인이 필요합니다!",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            val intent = Intent(this, NewReviewActivity::class.java)
+            intent.putExtra("token", token)
+            intent.putExtra("productDetails", detailsViewModel.product.value!!)
+            intent.putExtra("thumbnail", thumbnail)
+            intent.putExtra("email", email)
+            startActivity(intent)
         }
     }
     private fun checkLogined(): String?{
@@ -198,6 +244,34 @@ class ProductDetailActivity : AppCompatActivity() {
             .override(Target.SIZE_ORIGINAL)
             .into(imageView.descriptionIv)
         imageView.root.visibility = View.VISIBLE
+    }
+    @SuppressLint("ClickableViewAccessibility")
+    fun openReviewModifyPopup(reviewData: ReviewData):Boolean{
+        //check is me
+        val token = checkLogined()
+        if (token == null || email == null || reviewData.email != email) return false
+
+        val popupLayout = layoutInflater.inflate(R.layout.review_modify_popup, null)
+        val popupWindow = PopupWindow(popupLayout, LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.MATCH_PARENT, true)
+        popupLayout.setOnClickListener { popupWindow.dismiss() }
+
+        val modifyBtn = popupLayout.findViewById<Button>(R.id.modify_btn)
+        val deleteBtn = popupLayout.findViewById<Button>(R.id.delete_btn)
+        modifyBtn.setOnClickListener { val intent = Intent(this, UpdateReviewActivity::class.java)
+            intent.putExtra("token", token)
+            intent.putExtra("productDetails", detailsViewModel.product.value!!)
+            intent.putExtra("review", reviewData)
+            intent.putExtra("thumbnail", thumbnail)
+            startActivity(intent)
+        }
+        deleteBtn.setOnClickListener {
+            detailsViewModel.removeReview(token, productId, reviewData.id)
+            popupWindow.dismiss()
+        }
+
+        popupWindow.showAtLocation(binding.root, Gravity.CENTER,0, 0)
+        return true
     }
 }
 
