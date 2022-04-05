@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.Toast
 import com.zzuh.filot_shoppings.R
 import com.zzuh.filot_shoppings.data.api.BASE_URL
-import com.zzuh.filot_shoppings.data.vo.UserInfo
 import com.zzuh.filot_shoppings.ui.main.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,8 +20,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Path
 import java.util.concurrent.TimeUnit
 
 class LaunchActivity : AppCompatActivity() {
