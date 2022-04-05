@@ -64,9 +64,11 @@ class UpdateReviewActivity : AppCompatActivity() {
         binding.itemTitle.text = productDetails.name
         binding.ratingRb.rating = prevReview.rate
         binding.reviewItem.setText(prevReview.content)
-        binding.thumbnailSetTv.text = prevReview.imageUrl
+        binding.reviewTitleItem.setText(prevReview.title)
+        binding.thumbnailSetTv.text = prevReview.imageUrl.split('/').last()
         binding.addReviewBtn.text = "리뷰 수정"
         binding.userNameItem.text = prevReview.email
+        Log.d("Tester", prevReview.toString())
 
         Glide.with(this)
             .load(thumbnail)
@@ -132,7 +134,17 @@ class UpdateReviewActivity : AppCompatActivity() {
             else if(review.isEmpty() || thumbnail.isEmpty() || title.isEmpty())
                 Toast.makeText(this, "공란이 있습니다!", Toast.LENGTH_SHORT).show()
             else
-                reviewRepository.updateReview(token = token!!, prevReview.email, productId = productDetails.id.toInt(),reviewId = prevReview.id, imagePath = localImage.filePath!!, title = title, content = review, rate = rating)
+                reviewRepository.updateReview(
+                    token = token!!,
+                    email = prevReview.email,
+                    productId = productDetails.id.toInt(),
+                    reviewId = prevReview.id,
+                    imagePath = localImage.filePath,
+                    title = title,
+                    content = review,
+                    rate = rating,
+                    extension = localImage.fileExtension!!
+                )
         }
     }
 }

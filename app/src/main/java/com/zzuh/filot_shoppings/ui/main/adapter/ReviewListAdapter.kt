@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.PopupWindow
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.zzuh.filot_shoppings.data.vo.Product
 import com.zzuh.filot_shoppings.data.vo.ReviewData
 import com.zzuh.filot_shoppings.databinding.ProductListItemBinding
@@ -49,6 +50,8 @@ class ReviewListAdapter(private var itemList: List<ReviewData>, val context: Con
         val reviewImageURL: String = item.imageUrl
         Glide.with(context)
             .load(reviewImageURL)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .skipMemoryCache(true)
             .into(binding.reviewImageIv)
         binding.root.setOnLongClickListener { (context as ProductDetailActivity).openReviewModifyPopup(item) }
     }

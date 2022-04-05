@@ -16,3 +16,11 @@ data class ReviewData(
     val email: String,
     val imageUrl: String
 ): Serializable
+
+data class UpdateReviewDTO(
+    @SerializedName("title")
+    val title: String,
+    @SerializedName("content")
+    val content: String,
+    val rate: Float,
+)

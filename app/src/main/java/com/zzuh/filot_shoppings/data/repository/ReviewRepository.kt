@@ -19,6 +19,9 @@ class ReviewRepository() {
     fun addReview(token: String,email: String, productId: Int, imagePath: String, title: String, content: String, rate: Float)
         = dataSource.addReview(token = token,email = email, productId = productId, imagePath = imagePath, title = title, content = content, rate = rate)
 
-    fun updateReview(token: String,email: String, productId: Int, reviewId: Int, imagePath: String, title: String, content: String, rate: Float)
-            = dataSource.updateReview(token = token,email = email, productId = productId, reviewId = reviewId, imagePath = imagePath, title = title, content = content, rate = rate)
+    fun updateReview(token: String, email: String, productId: Int, reviewId: Int, imagePath: String?, title: String, content: String, rate: Float, extension: String = "jpg"){
+        dataSource.updateReviewData(token = token, productId = productId, reviewId = reviewId, title = title, content = content, rate = rate)
+        if (imagePath != null && imagePath.isNotEmpty())
+            dataSource.updateReviewImage(token = token, email = email, productId = productId, reviewId = reviewId, imagePath = imagePath, extension = extension)
+    }
 }

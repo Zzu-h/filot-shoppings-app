@@ -263,6 +263,7 @@ class ProductDetailActivity : AppCompatActivity() {
             intent.putExtra("productDetails", detailsViewModel.product.value!!)
             intent.putExtra("review", reviewData)
             intent.putExtra("thumbnail", thumbnail)
+            popupWindow.dismiss()
             startActivity(intent)
         }
         deleteBtn.setOnClickListener {

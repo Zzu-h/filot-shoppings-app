@@ -7,6 +7,7 @@ import com.zzuh.filot_shoppings.data.api.BASE_URL
 import com.zzuh.filot_shoppings.data.api.ReviewInterface
 import com.zzuh.filot_shoppings.data.repository.NetworkState
 import com.zzuh.filot_shoppings.data.vo.ReviewData
+import com.zzuh.filot_shoppings.data.vo.UpdateReviewDTO
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -113,13 +114,9 @@ class ReviewNetworkDataSource {
             }
         })
     }
-    fun updateReview(token: String,email: String, productId: Int, reviewId: Int, imagePath: String, title: String, content: String, rate: Float){
-        val requestBody: MutableMap<String, RequestBody> = mutableMapOf()
-        requestBody["title"] = RequestBody.create(getTextMediaType(), title)
-        requestBody["content"] = RequestBody.create(getTextMediaType(), content)
-        requestBody["rate"] = RequestBody.create(getTextMediaType(), rate.toString())
-        val tokesValue = token.substring(0, 10)
-        val callGetList = api.updateReview(token, productId, reviewId, requestBody, getImageBody(imagePath, "key", "${productId}_${email}.jpg"))
+    fun updateReviewData(token: String, productId: Int, reviewId: Int, title: String, content: String, rate: Float){
+
+        val callGetList = api.updateReviewData(token, productId, reviewId, UpdateReviewDTO(title, content, rate))
         _networkState.postValue(NetworkState.LOADING)
 
         callGetList.enqueue(object :Callback<Unit>{
@@ -132,6 +129,27 @@ class ReviewNetworkDataSource {
                 if(!response.isSuccessful){
                     _networkState.postValue(NetworkState.ERROR)
                     Log.d("updateReview","${response.raw()}")
+                    return
+                }
+                _networkState.postValue(NetworkState.LOADED)
+            }
+        })
+    }
+    fun updateReviewImage(token: String, email: String, productId: Int, reviewId: Int, imagePath: String, extension: String = "jpg"){
+
+        val callGetList = api.updateReviewImage(token, productId, reviewId, getImageBody(imagePath,"file","${productId}_${email}.$extension"))
+        _networkState.postValue(NetworkState.LOADING)
+
+        callGetList.enqueue(object :Callback<Unit>{
+            override fun onFailure(call: Call<Unit>, t: Throwable) {
+                t.printStackTrace()
+                _networkState.postValue(NetworkState.ERROR)
+            }
+
+            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                if(!response.isSuccessful){
+                    _networkState.postValue(NetworkState.ERROR)
+                    Log.d("updateReviewImage","${response.raw()}")
                     return
                 }
                 _networkState.postValue(NetworkState.LOADED)

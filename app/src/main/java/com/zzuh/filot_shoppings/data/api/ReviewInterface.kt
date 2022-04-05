@@ -1,6 +1,7 @@
 package com.zzuh.filot_shoppings.data.api
 
 import com.zzuh.filot_shoppings.data.vo.ReviewData
+import com.zzuh.filot_shoppings.data.vo.UpdateReviewDTO
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -29,13 +30,20 @@ interface ReviewInterface {
         @Part file: MultipartBody.Part,
     ): Call<Unit>
 
-    @Multipart
     @PUT("/products/{product_id}/reviews/{review_id}")
-    fun updateReview(
+    fun updateReviewData(
         @Header("X-AUTH-TOKEN") token: String,
         @Path("product_id") productId: Int,
         @Path("review_id") reviewId: Int,
-        @PartMap params: Map<String,@JvmSuppressWildcards RequestBody>,
+        @Body updateReviewDTO: UpdateReviewDTO,
+    ): Call<Unit>
+
+    @Multipart
+    @PUT("/products/{product_id}/reviews/{review_id}/image")
+    fun updateReviewImage(
+        @Header("X-AUTH-TOKEN") token: String,
+        @Path("product_id") productId: Int,
+        @Path("review_id") reviewId: Int,
         @Part file: MultipartBody.Part,
     ): Call<Unit>
 }
